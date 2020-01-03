@@ -1,3 +1,10 @@
+<% if logged_in? %>
+  <script id="bootstrap-current-user" type="text/javascript">
+  	window.currentUser = <%= render("api/users/user.json.jbuilder",
+  		user: current_user).html_safe %>
+  </script>
+<% end %>
+
 <div id="root">
     <img src="https://media1.tenor.com/images/ea490bc9d89afaf7d2431a0374aef65c/tenor.gif?itemid=15761601">
 </div>
