@@ -37,27 +37,28 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='login-splash'>
                 <form onSubmit={this.handleSubmit}>
-                    Welcome to coinbase!
-                    Please {this.props.formType}
+                    <h1>
+                       {this.props.formType}
+                    </h1>
                     {this.renderErrors()}
                     <div className="login-form">
-                        <label>Email:
+                        <label className='login-label'>Email:
                             <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"
                             />
                         </label>
-                        <label>Username:
+                        <label className='login-label'>Username:
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
                             />
                         </label>
-                        <label>Password:
+                        <label className='login-label'>Password:
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}

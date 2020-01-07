@@ -7,7 +7,7 @@ import SessionForm from './session_form';
 const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'login',
+        formType: 'Sign in to Coinbase',
     };
 };
 
