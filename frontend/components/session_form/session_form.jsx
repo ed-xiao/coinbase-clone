@@ -9,6 +9,11 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUser = this.demoUser.bind(this);
+    }
+
+    componentWillMount() {
+        this.props.clearErrors();
     }
 
     update(field) {
@@ -41,11 +46,19 @@ class SessionForm extends React.Component {
                     <input className="session-submit session-demo"
                         type="submit"
                         value="Demo login"
+                        onClick={this.demoUser}
                     />
             )
         } else {
             return ""
         };
+    }
+
+    demoUser() {
+        this.setState({
+            email: 'email',
+            password: 'asdf1234'
+        })
     }
 
     inputUsername() {
