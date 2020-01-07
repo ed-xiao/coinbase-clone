@@ -12,7 +12,7 @@ import LoginFormContainer from '../components/session_form/login_form_container'
 import NavContainer from '../components/nav/nav_container';
 
 const App = () => (
-    <div>
+    <div className='top'>
         <Route path="/" component={NavContainer} />
         <AuthRoute exact path='/signup' component={SignupFormContainer} />
         <AuthRoute exact path='/login' component={LoginFormContainer} />

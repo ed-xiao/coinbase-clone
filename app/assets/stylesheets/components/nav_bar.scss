@@ -1,3 +1,13 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background: $blue;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+}
+
 .nav-bar {
     display: flex;
     flex-direction: row;
@@ -8,9 +18,6 @@
     margin: 0px auto;
     padding: 0px 16px;
     height: 72px;
-    font-family: 'Lato', sans-serif;
-    // text-decoration: none;
-    background: $blue;
 }
 
 .nav-right {
@@ -20,7 +27,6 @@
 
 .nav-link {
     color: $white;
-    // background-color: $blue;
     text-decoration: none;
     padding: 10px;
     font-size: 15px;

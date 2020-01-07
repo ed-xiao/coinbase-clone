@@ -38,10 +38,10 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className='login-splash'>
+                <h2 className='login-title'>
+                    {this.props.formType}
+                </h2>
                 <form onSubmit={this.handleSubmit}>
-                    <h1>
-                       {this.props.formType}
-                    </h1>
                     {this.renderErrors()}
                     <div className="login-form">
                         <label className='login-label'>Email:
