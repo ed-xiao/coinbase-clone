@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_051327) do
+ActiveRecord::Schema.define(version: 2020_01_07_232409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cryptos", force: :cascade do |t|
+    t.string "symbol", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_cryptos_on_name", unique: true
+    t.index ["symbol"], name: "index_cryptos_on_symbol", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
