@@ -33,3 +33,49 @@
     margin-bottom: 24px;
     padding: 24px;
 }
+
+.login-label {
+    padding-bottom: 20px;
+}
+
+.session-submit {
+    color: $white;
+    opacity: 0.5;
+    background-color: rgb(22, 82, 240);
+    border: none;
+}
+
+.session-demo {
+    margin-top: 20px;
+}
+
+input {
+    // z-index: 0;
+    width: 100%;
+    font-size: 18px;
+    // font-weight: 400;
+    color: rgb(5, 15, 25);
+    // font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    flex: 1 1 0px;
+    // margin: 0px;
+    padding: 20px;
+    // border-width: initial;
+    border-style: none;
+    // border-color: initial;
+    // border-image: initial;
+    border-radius: 3px;
+    // background: none;
+    box-sizing: border-box;
+    border: 1px solid gold;
+}
+
+.auth-error {
+    // display: flex;
+    // flex-direction: column;
+    // padding-top: 10px;
+    padding-bottom: 20px;
+    color: rgb(244, 198, 34);
+    font-size: 14px;
+    font-weight: 500;
+    list-style-type: none;
+}

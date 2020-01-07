@@ -8,6 +8,7 @@ const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
         formType: 'Sign in to Coinbase',
+        formButton: 'Sign in'
     };
 };
 

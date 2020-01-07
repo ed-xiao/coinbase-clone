@@ -8,6 +8,7 @@ const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
         formType: 'Create your account',
+        formButton: 'Create account'
     };
 };
 
