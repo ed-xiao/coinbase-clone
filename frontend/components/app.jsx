@@ -5,11 +5,13 @@ import {
     Switch,
     Link
 } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, UnprotectedRoute } from '../util/route_util';
 
 import SignupFormContainer from '../components/session_form/signup_form_container';
 import LoginFormContainer from '../components/session_form/login_form_container';
 import NavContainer from '../components/nav/nav_container';
+import PortContainer from '../components/portfolio/portfolio_container';
+import Welcome from '../components/welcome/welcome';
 
 // update line 21 to be new portfolio container
 const App = () => (
@@ -18,8 +20,9 @@ const App = () => (
         <Switch>
             <AuthRoute exact path='/signup' component={SignupFormContainer} />
             <AuthRoute exact path='/login' component={LoginFormContainer} />
-            <Route path="/" component={NavContainer} />
-            <Redirect to="/" />
+            <ProtectedRoute exact path="/home" component={PortContainer} />
+            <UnprotectedRoute path="/" component={Welcome} />
+            {/* <Redirect to="/" /> */}
         </Switch>
     </div>
 );

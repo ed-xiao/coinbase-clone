@@ -14,6 +14,12 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
     )} />
 );
 
+const Unprotected = ({ component: Component, path, loggedIn, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        !loggedIn ? (<Component {...props} />) : (<Redirect to="/home" />)
+    )} />
+);
+
 const mSTP = state => (
     { loggedIn: Boolean(state.session.id) }
 );
@@ -21,3 +27,5 @@ const mSTP = state => (
 export const AuthRoute = withRouter(connect(mSTP)(Auth));
 
 export const ProtectedRoute = withRouter(connect(mSTP)(Protected));
+
+export const UnprotectedRoute = withRouter(connect(mSTP)(Unprotected));
