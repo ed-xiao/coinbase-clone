@@ -14,18 +14,13 @@ import NavContainer from '../components/nav/nav_container';
 const App = () => (
     <div className='top'>
         <Route path="/" component={NavContainer} />
-        <AuthRoute exact path='/signup' component={SignupFormContainer} />
-        <AuthRoute exact path='/login' component={LoginFormContainer} />
+        <Switch>
+            <AuthRoute exact path='/signup' component={SignupFormContainer} />
+            <AuthRoute exact path='/login' component={LoginFormContainer} />
+            <Route path="/" component={NavContainer} />
+            <Redirect to="/" />
+        </Switch>
     </div>
 );
 
-{/* <Redirect to="/" /> */}
 export default App;
-
-{/* <header>
-    <nav className='nav-bar'>
-        <Link to="/" className="nav-link nav-logo">
-            coinbase
-                </Link>
-    </nav>
-</header> */}

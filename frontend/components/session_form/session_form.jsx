@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
         this.demoUser = this.demoUser.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.clearErrors();
     }
 
