@@ -1,2 +1,0 @@
-class PortfoliosController < ApplicationController
-end
