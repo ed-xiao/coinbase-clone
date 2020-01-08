@@ -3,9 +3,15 @@ import { connect } from 'react-redux';
 import Portfolio from './portfolio';
 import { fetchPortfolio } from '../../actions/portfolio_actions';
 
-const mapStateToProps = ({portfolio}) => ({
-    portfolio: portfolio
-});
+// const mapStateToProps = ({portfolio}) => ({
+//     portfolio: portfolio
+// });
+
+const mapStateToProps = (state) => {
+    return ({
+        portfolio: state.entities.portfolio
+    })
+};
 
 const mapDispatchToProps = (dispatch) => ({
     fetchPortfolio: () => dispatch(fetchPortfolio())
