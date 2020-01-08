@@ -11,6 +11,7 @@ import SignupFormContainer from '../components/session_form/signup_form_containe
 import LoginFormContainer from '../components/session_form/login_form_container';
 import NavContainer from '../components/nav/nav_container';
 
+// update line 21 to be new portfolio container
 const App = () => (
     <div className='top'>
         <Route path="/" component={NavContainer} />
