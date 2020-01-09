@@ -5,6 +5,7 @@
     max-width: 575px;
     width: 578px;
     min-height: 460px;
+    // min-height: 240px;
     margin-bottom: 24px;
 
     box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
@@ -19,6 +20,8 @@
     flex: 1 1 auto;
 
     margin: 40px;
+
+    color: #1652f0;
 }
 
 .portfolio-header {
@@ -73,11 +76,19 @@
 .portfolio-body table {
     width: 100%;
     height: 100%;
+    border-color: grey;
+}
+
+.portfolio-body tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-spacing: 2px;
 }
 
 .portfolio-body tr {
     border-bottom: 1px solid rgb(236, 239, 241);
-    height: 70px;
+    // height: 70px;
     // padding: 5px;
 }
 
@@ -85,10 +96,43 @@
     border-collapse: collapse;   
 }
 
+.portfolio-body tr:first-child {
+    padding-left: 24px;
+}
+
 .portfolio-body td {
-    padding: 16px
+    padding: 10px;
+    font-weight: 400;
+    // text-align: left;
+    text-align: right;
+    color: rgb(5, 15, 25);
 }
 
 .portfolio-body a:visited {
   color:black;
+}
+
+.portfolio-body td a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    min-width: 175px;
+}
+
+.portfolio-body td a h4 {
+    margin-left: 10px;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.3;
+    color: rgb(5, 15, 25);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.portfolio-body td p {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: rgb(5, 15, 25);
 }

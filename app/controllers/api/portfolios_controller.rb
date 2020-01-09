@@ -9,10 +9,6 @@ class Api::PortfoliosController < ApplicationController
         # trigger call to crypto model where the third party api call is made
         @cryptos = Crypto.fetch_current_value(portfolio_cryptos)
 
-
-
-
-
         # .includes(:crypto)
         # Crypto.joins(:portfolios).where(portfolios: {user_id: current_user.id})
         # Portfolio.joins(:crypto).where(user_id: 18).select("crypto.name")

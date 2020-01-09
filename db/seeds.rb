@@ -31,5 +31,8 @@ Portfolio.create([
     {user_id: demo_user.id, crypto_id: bitcoin.id, units: 10.5},
     {user_id: demo_user.id, crypto_id: ethereum.id, units: 42.5},
     {user_id: demo_user.id, crypto_id: bitcoin_cash.id, units: 18},
-    {user_id: demo_user.id, crypto_id: litecoin.id, units: 3}
+    {user_id: demo_user.id, crypto_id: litecoin.id, units: 3},
+    {user_id: demo_user.id, crypto_id: xrp.id, units: 9},
+    {user_id: demo_user.id, crypto_id: tether.id, units: 20},
+    {user_id: demo_user.id, crypto_id: eos.id, units: 20},
 ])
