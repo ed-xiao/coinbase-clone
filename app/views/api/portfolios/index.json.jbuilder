@@ -9,6 +9,7 @@ json.cryptos do
   @portfolio.each do |holding|
     json.set! holding.crypto.id do
       json.extract! holding.crypto, :id, :symbol, :name
+      json.value @cryptos[holding.crypto.symbol]['USD']
     end
   end
 end

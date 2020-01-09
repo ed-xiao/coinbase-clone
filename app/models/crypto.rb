@@ -4,8 +4,8 @@ class Crypto < ApplicationRecord
     has_many :portfolios
 
     def self.fetch_current_value(symbols)
-        url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,DASH&tsyms='
-        syms = symbols.join(',').concat('&api_key=')
+        url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms='
+        syms = symbols.join(',').concat('&tsyms=USD&api_key=')
         api_key = Rails.application.credentials.cryptocompare[:api_key]
         response = Faraday.get url+syms+api_key
         values = JSON.parse(response.body)

@@ -6,7 +6,9 @@ class PortfolioItem extends React.Component {
     }
 
     render() {
-        let displayNum = this.props.holding.units.toFixed(4);
+        let {holding, crypto} = this.props;
+        let displayUnits = holding.units.toFixed(4);
+        let displayValue = (holding.units * crypto.value).toFixed(2);
         return (
             <tr className='portfolio-item'>
                 <td>
@@ -21,17 +23,17 @@ class PortfolioItem extends React.Component {
                 </td>
                 <td>
                     <a href="#">
-                        {this.props.crypto.name}
+                        {crypto.name}
                     </a>
                 </td>
                 <td>
-                    {displayNum}
+                    {displayUnits}
                 </td>
                 <td>
-                    {this.props.crypto.symbol}
+                    {crypto.symbol}
                 </td>
                 <td>
-                    $ (Units * Price)
+                    $ {displayValue}
                 </td>
             </tr>
         );

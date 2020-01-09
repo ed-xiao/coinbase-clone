@@ -20,10 +20,10 @@ const App = () => (
         <Switch>
             <AuthRoute exact path='/signup' component={SignupFormContainer} />
             <AuthRoute exact path='/login' component={LoginFormContainer} />
-            <ProtectedRoute exact path="/home" component={PortContainer} />
             <UnprotectedRoute path="/" component={Welcome} />
             {/* <Redirect to="/" /> */}
         </Switch>
+        <ProtectedRoute exact path="/home" component={PortContainer} />
     </div>
 );
 
