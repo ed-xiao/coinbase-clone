@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 User.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('users')
 demo_user = User.create(username: 'demo_user', email: 'demo@email.com', password: 'password')
 
 Crypto.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('cryptos')
 bitcoin = Crypto.create(symbol: 'BTC', name: 'Bitcoin')
 ethereum = Crypto.create(symbol: 'ETH', name: 'Ethereum')
 bitcoin_cash = Crypto.create(symbol: 'BCH', name: 'Bitcoin Cash')
@@ -23,6 +26,7 @@ monero = Crypto.create(symbol: 'XMR', name: 'Monero')
 stellar = Crypto.create(symbol: 'XLM', name: 'Stellar')
 
 Portfolio.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('portfolios')
 Portfolio.create([
     {user_id: demo_user.id, crypto_id: bitcoin.id, units: 10.5},
     {user_id: demo_user.id, crypto_id: ethereum.id, units: 42.5},
