@@ -22,8 +22,19 @@ class Portfolio extends React.Component {
         }))
     }
 
+    sumTotalBalance() {
+        let totalBalance = 0;
+        let crypto;
+        Object.values(this.props.portfolio).map((holding, idx) => {
+            crypto = this.props.cryptos[holding.cryptoId]
+            totalBalance += (holding.units * crypto.value)
+        });
+        return totalBalance.toFixed(2);
+    }
+
     render() {
         let arrayOfPortfolioItems = "";
+        this.sumTotalBalance();
         if (Object.values(this.props.portfolio).length === 0) {
             // console.log('portfolio is empty object')
             return null;
@@ -48,6 +59,9 @@ class Portfolio extends React.Component {
                             {arrayOfPortfolioItems}
                         </tbody>
                     </table>
+                </div>
+                <div className='portfolio-footer'>
+                    Total Balance ≈ ${this.sumTotalBalance()}
                 </div>
             </div>
         );

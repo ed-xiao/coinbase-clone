@@ -10,7 +10,7 @@ import { AuthRoute, ProtectedRoute, UnprotectedRoute } from '../util/route_util'
 import SignupFormContainer from '../components/session_form/signup_form_container';
 import LoginFormContainer from '../components/session_form/login_form_container';
 import NavContainer from '../components/nav/nav_container';
-import PortContainer from '../components/portfolio/portfolio_container';
+// import PortContainer from '../components/portfolio/portfolio_container';
 import Welcome from '../components/welcome/welcome';
 
 // update line 21 to be new portfolio container

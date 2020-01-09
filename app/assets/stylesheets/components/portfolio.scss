@@ -136,3 +136,18 @@
     font-weight: 400;
     color: rgb(5, 15, 25);
 }
+
+.portfolio-footer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    flex-shrink: 0;
+    height: 54px;
+    font-weight: 500;
+    color: rgba(17, 51, 83, 0.6);
+    border-top: 1px solid rgb(236, 239, 241);
+    transition: all 0.25s ease 0s;
+}
