@@ -1,6 +1,6 @@
 import { RECEIVE_PORT_CRYPTOS } from '../actions/portfolio_actions';
 
-const cryptoReducer = (state = {}, action) => {
+const cryptosReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PORT_CRYPTOS:
@@ -10,4 +10,4 @@ const cryptoReducer = (state = {}, action) => {
     }
 };
 
-export default cryptoReducer;
+export default cryptosReducer;

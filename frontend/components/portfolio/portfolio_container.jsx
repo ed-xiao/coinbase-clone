@@ -9,7 +9,8 @@ import { fetchPortfolio } from '../../actions/portfolio_actions';
 
 const mapStateToProps = (state) => {
     return ({
-        portfolio: state.entities.portfolio
+        portfolio: state.entities.portfolio,
+        cryptos: state.entities.cryptos
     })
 };
 

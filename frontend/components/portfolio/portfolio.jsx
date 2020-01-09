@@ -9,34 +9,40 @@ class Portfolio extends React.Component {
 
     componentDidMount() {
         this.props.fetchPortfolio();
-        // need cryptos to be loaded into state as well - how?
         // need to fetch price of crypto with external API
     }
 
     createTableItems() {
-        return (Object.values(this.props.portfolio).map((holding, idx) => (
-            <PortfolioItem holding={holding} key={idx}/>
-        )))
+        let crypto;
+        return (Object.values(this.props.portfolio).map((holding, idx) => {
+            crypto = this.props.cryptos[holding.cryptoId]
+            return (
+                <PortfolioItem holding={holding} crypto={crypto} key={idx}/>
+            )
+        }))
     }
 
     render() {
         let arrayOfPortfolioItems = "";
         if (Object.values(this.props.portfolio).length === 0) {
-            console.log('portfolio is empty object')
+            // console.log('portfolio is empty object')
             return null;
         } else {
-            console.log('portfolio is not undef')
+            // console.log('portfolio is not undef')
             arrayOfPortfolioItems = this.createTableItems();
         }
-        // debugger;
         return (
             <div className='portfolio'>
                 <div className='portfolio-header'>
-                    <h1>Portfolio</h1>
-                    <a href='#'>List</a>
-                    <a href='#'>Chart</a>
+                    <div>
+                        <h2>Your Portfolio</h2>
+                    </div>
+                    <div className='portfolio-right'>
+                        <a href='#'>List</a>
+                        <a href='#'>Chart</a>
+                    </div>
                 </div>
-                <div>
+                <div className='portfolio-body'>
                     <table>
                         <tbody>
                             {arrayOfPortfolioItems}
@@ -47,6 +53,5 @@ class Portfolio extends React.Component {
         );
     }
 }
-//tr is each row
-//td is
+
 export default Portfolio;
