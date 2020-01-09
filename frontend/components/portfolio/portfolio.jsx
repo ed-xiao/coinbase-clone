@@ -8,9 +8,9 @@ class Portfolio extends React.Component {
     }
 
     componentDidMount() {
-        // debugger;
         this.props.fetchPortfolio();
-        // debugger;
+        // need cryptos to be loaded into state as well - how?
+        // need to fetch price of crypto with external API
     }
 
     createTableItems() {
@@ -23,10 +23,12 @@ class Portfolio extends React.Component {
         let arrayOfPortfolioItems = "";
         if (Object.values(this.props.portfolio).length === 0) {
             console.log('portfolio is empty object')
+            return null;
         } else {
             console.log('portfolio is not undef')
             arrayOfPortfolioItems = this.createTableItems();
         }
+        // debugger;
         return (
             <div className='portfolio'>
                 <div className='portfolio-header'>

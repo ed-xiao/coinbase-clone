@@ -4,7 +4,7 @@ const portfolioReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PORT_CRYPTOS:
-            return Object.assign({}, action.allPortCryptos);
+            return Object.assign({}, action.allPortCryptos.portfolios); //need to key into "portfolios"
         default:
             return state;
     }

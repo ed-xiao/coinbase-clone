@@ -6,11 +6,7 @@ class PortfolioItem extends React.Component {
     }
 
     render() {
-        // return (
-        //     <div>
-        //         PortfolioItem Component
-        //     </div>
-        // )
+        // debugger;
         return (
             <tr className='portfolio-item'>
                 <td>
