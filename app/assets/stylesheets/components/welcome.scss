@@ -1,0 +1,64 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $white;
+
+    .welcome-top {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // justify-content: center;
+        align-items: center;
+        color: $white;
+        background: $blue;
+        // max-width: 725px;
+
+        h2 {
+            line-height: 52px;
+            font-size: 48px;
+            font-weight: 800;
+            padding-top: 60px;
+            // text-align: center;
+            // -webkit-font-smoothing: antialiased;
+        }
+
+        h4 {
+            font-size: 16px;
+            line-height: 28px;
+            margin: 24px 0px;
+            font-weight: 400;
+        }
+    }
+
+    .welcome-image-text {
+        h1{
+            display: block;
+            font-size: 40px;
+            font-weight: 500;
+            color: rgb(15, 50, 86);
+            text-align: center;
+            margin: 0px 0px 10px;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+
+        p {
+            color: rgb(144, 161, 184);
+            text-align: center;
+        }
+    }
+
+
+
+    .welcome-image {
+        max-width: 700px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
