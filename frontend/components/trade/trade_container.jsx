@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../actions/modal_actions';
+// import { openModal, closeModal } from '../../actions/modal_actions';
 import { createTransaction } from '../../actions/trade_actions';
 import Trade from './trade';
 
