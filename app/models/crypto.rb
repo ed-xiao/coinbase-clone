@@ -2,6 +2,7 @@ class Crypto < ApplicationRecord
     validates :symbol, :name, presence: true, uniqueness: true
 
     has_many :portfolios
+    has_many :transactions
 
     def self.fetch_current_value(symbols)
         url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms='

@@ -13,6 +13,7 @@ demo_user = User.create(username: 'demo_user', email: 'demo@email.com', password
 
 Crypto.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('cryptos')
+dollar = Crypto.create(symbol: 'USD', name: 'US Dollar')
 bitcoin = Crypto.create(symbol: 'BTC', name: 'Bitcoin')
 ethereum = Crypto.create(symbol: 'ETH', name: 'Ethereum')
 bitcoin_cash = Crypto.create(symbol: 'BCH', name: 'Bitcoin Cash')
@@ -28,6 +29,7 @@ stellar = Crypto.create(symbol: 'XLM', name: 'Stellar')
 Portfolio.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('portfolios')
 Portfolio.create([
+    {user_id: demo_user.id, crypto_id: dollar.id, units: 1000000},
     {user_id: demo_user.id, crypto_id: bitcoin.id, units: 10.5},
     {user_id: demo_user.id, crypto_id: ethereum.id, units: 42.5},
     {user_id: demo_user.id, crypto_id: bitcoin_cash.id, units: 18},
@@ -35,4 +37,10 @@ Portfolio.create([
     {user_id: demo_user.id, crypto_id: xrp.id, units: 9},
     {user_id: demo_user.id, crypto_id: tether.id, units: 20},
     {user_id: demo_user.id, crypto_id: eos.id, units: 20},
+])
+
+Transaction.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('transactions')
+Transaction.create([
+    {user_id: demo_user.id, crypto_id: bitcoin.id, units: 100.5, price: 100000.00, transaction_type: 'buy'}
 ])
