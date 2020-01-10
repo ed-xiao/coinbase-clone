@@ -12,6 +12,7 @@ import LoginFormContainer from '../components/session_form/login_form_container'
 import NavContainer from '../components/nav/nav_container';
 // import PortContainer from '../components/portfolio/portfolio_container';
 import Welcome from '../components/welcome/welcome';
+import Footer from '../components/footer/footer';
 
 // update line 21 to be new portfolio container
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
             {/* <ProtectedRoute exact path="/home" component={PortContainer} />   // logged in */}
             <Redirect to="/" />
         </Switch>
+        <Route path="/" component={Footer} />
     </div>
 );
 
