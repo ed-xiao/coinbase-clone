@@ -41,6 +41,28 @@ body {
 .nav-right {
     display: flex;
     justify-content: space-around;
+
+    a:last-of-type {
+        // white-space: nowrap;
+        margin-left: 16px;
+        // position: relative;
+        // width: auto;
+        // color: rgb(255, 255, 255);
+        // cursor: pointer;
+        background-color: transparent;
+        border-radius: 4px;
+        transition: all 80ms ease-in-out 0s;
+        // padding: 12px 16px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        // border-image: initial;
+    }
+
+    a:last-of-type:hover {
+        background: $white;
+        color: $blue;
+    }
 }
 
 .nav-link {
@@ -48,6 +70,7 @@ body {
     // text-decoration: none;
     padding: 10px;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .nav-link:hover {

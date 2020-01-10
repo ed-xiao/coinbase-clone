@@ -18,7 +18,21 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
 const Unprotected = ({ component: Component, path, loggedIn, exact }) => (
     <Route path={path} exact={exact} render={(props) => (
         // !loggedIn ? (<Component {...props} />) : (<Redirect to="/home" />)
-        !loggedIn ? (<Component {...props} />) : (<PortContainer />)
+        !loggedIn ? (<Component {...props} />) : (
+            <div>
+                <div className='banner'>
+                    <div>
+                        <h4>Hi there!</h4>
+                        <h1>Welcome to Coinbase.</h1>
+                        <h1>Ready to buy crypto?</h1>
+                    </div>
+                    <div>
+                        <img src="https://assets.coinbase.com/assets/new-user-header-image.0af1725396d815ccd95c17e676c2da59.png"></img>
+                    </div>
+                </div>
+                <PortContainer />
+            </div>
+        )
     )} />
 );
 

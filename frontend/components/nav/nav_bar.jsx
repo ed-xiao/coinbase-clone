@@ -16,7 +16,7 @@ export default ({ currentUser, logout }) => {
         </div>
     ) : (
         <div className="nav-right">
-            <Link className="nav-link" to="/login">Log In</Link>
+            <Link className="nav-link" to="/login">Sign In</Link>
             <Link className="nav-link" to="/signup">Get Started</Link>
         </div>
     );

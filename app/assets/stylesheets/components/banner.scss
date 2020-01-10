@@ -1,0 +1,26 @@
+.banner {
+    // float: left;
+    // display: block;
+    display: flex;
+    background: $blue;
+    color: $white;
+
+    div h1, div h4 {
+        margin-left: 20px;
+        padding: 10px;
+    }
+
+    div h1:last-of-type {
+        padding-bottom: 30px;
+    }
+
+    div img{
+        position: relative;
+        right: -400px;
+        // bottom: 0px;
+        top: -20px;
+        width: 481px;
+        height: 241px;
+        margin: auto;
+    }
+}
