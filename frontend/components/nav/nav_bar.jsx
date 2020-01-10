@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logout }) => {
     const display = currentUser ? (
-        <div className="nav-right">
-            <button className="nav-link" onClick={logout}>Logout</button>
+        <div className="nav-wrapper">
+            <div className='nav-center'>
+                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/">Portfolio</Link>
+                <Link className="nav-link" to="/">Prices</Link>
+            </div>
+            <div className="nav-right">
+                <button className="nav-link nav-trade">Trade</button>
+                <button className="nav-link" onClick={logout}>Logout</button>
+            </div>
         </div>
     ) : (
         <div className="nav-right">
@@ -12,6 +20,7 @@ export default ({ currentUser, logout }) => {
             <Link className="nav-link" to="/signup">Get Started</Link>
         </div>
     );
+
     return (
         <header>
             <nav className='nav-bar'>
