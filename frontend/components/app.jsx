@@ -13,11 +13,14 @@ import NavContainer from '../components/nav/nav_container';
 // import PortContainer from '../components/portfolio/portfolio_container';
 import Welcome from '../components/welcome/welcome';
 import Footer from '../components/footer/footer';
+// import Modal from '../components/modal/modal';
 
 // update line 21 to be new portfolio container
 const App = () => (
     <div className='top'>
+        {/* {<Modal />} */}
         <Route path="/" component={NavContainer} />
+
         <Switch>
             <AuthRoute exact path='/signup' component={SignupFormContainer} />
             <AuthRoute exact path='/login' component={LoginFormContainer} />
