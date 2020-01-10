@@ -23,15 +23,16 @@ class Trade extends React.Component {
     }
 
     render() {
+        let {transaction_type} = this.state;
         return (
             <div className='widget-trade'>
                 <div className='trade-top'>
-                    <div>Buy</div>
-                    <div>Sell</div>
-                    <div>Convert</div>
+                    <div onClick={() => this.setState({transaction_type: 'buy'})}>Buy</div>
+                    <div onClick={() => this.setState({ transaction_type: 'sell' })}>Sell</div>
+                    <div onClick={() => this.setState({ transaction_type: 'convert' })}>Convert</div>
                 </div>
                 <div>
-                    <input type="tel" placeholder='0' minLength='1' onChange={this.update('units')}/>
+                    <input type="number" placeholder='0 units' minLength='1' onChange={this.update('units')}/>
                 </div>
                 <div className='trade-bottom'>
                     <select name="" id="">
@@ -39,7 +40,7 @@ class Trade extends React.Component {
                         <option value="">ETH</option>
                         <option value="">LTC</option>
                     </select>
-                    <button type='button' onClick={this.handleClick}>Buy Crypto</button>
+                    <button type='button' onClick={this.handleClick}>{transaction_type.slice(0,1).toUpperCase().concat(transaction_type.slice(1))} Crypto</button>
                 </div>
             </div>
         )
