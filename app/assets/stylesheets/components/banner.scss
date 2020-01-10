@@ -4,6 +4,11 @@
     display: flex;
     background: $blue;
     color: $white;
+    justify-content: space-between;
+
+    div:first-of-type {
+        min-width: 400px;
+    }
 
     div h1, div h4 {
         margin-left: 20px;
@@ -15,12 +20,12 @@
     }
 
     div img{
-        position: relative;
-        right: -400px;
+        // position: relative;
+        // right: -400px;
         // bottom: 0px;
-        top: -20px;
-        width: 481px;
+        // top: -20px;
+        // width: 481px;
         height: 241px;
-        margin: auto;
+        // margin: auto;
     }
 }

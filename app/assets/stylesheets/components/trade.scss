@@ -1,0 +1,30 @@
+.widget-trade {
+    padding: 20px;
+    margin: 24px;
+    font-size: 24px;
+    font-weight: 500;
+
+    .trade-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        div:hover {
+            cursor: pointer;
+        }
+    }
+
+    .trade-bottom {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+
+        button {
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 24px;
+            text-align: center;
+            background: $blue;
+        }
+    }
+}
