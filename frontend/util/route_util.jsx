@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter, Switch } from 'react-router-dom';
 import PortContainer from '../components/portfolio/portfolio_container';
 import TradeContainer from '../components/trade/trade_container';
 

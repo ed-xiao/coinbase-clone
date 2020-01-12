@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class PortfolioItem extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class PortfolioItem extends React.Component {
         return (
             <tr className='portfolio-item'>
                 <td>
-                    <a href="#">
+                    <Link to={`cryptos/${crypto.id}`}>
                         <svg height="36" width="36" role="img" size="36" bgcolor="backgroundAccent" lighten="0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 0C7.176 0 0 7.176 0 16s7.176 16 16 16 16-7.176 16-16S24.824 0 16 0zm0 30.06C8.242 30.06 1.94 23.759 1.94 16 1.94 8.242 8.241 1.94 16 1.94c7.758 0 14.06 6.302 14.06 14.06 0 7.758-6.302 14.06-14.06 14.06z" fill="#1652F0">
                             </path>
@@ -23,7 +24,7 @@ class PortfolioItem extends React.Component {
                         <h4>
                             {crypto.name}
                         </h4>
-                    </a>
+                    </Link>
                 </td>
                 <td>
                     <p>
