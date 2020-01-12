@@ -9,8 +9,10 @@ class Api::CryptosController < ApplicationController
 
     def show
         @crypto = Crypto.find(params[:id])
-        @value = Crypto.fetch_current_value([@crypto['symbol']])
+        # @value = Crypto.fetch_current_value([@crypto['symbol']])
         # debugger
+
+        @value = Crypto.fetch_crypto_detail(@crypto['symbol'])
     end
 end
 

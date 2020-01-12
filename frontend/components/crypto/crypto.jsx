@@ -1,31 +1,7 @@
 import React from 'react';
 import {
-    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    LineChart, Line, XAxis, YAxis, Tooltip
 } from 'recharts';
-
-const data = [
-    {
-        name: 'Page A', pv: 2400, amt: 2400,
-    },
-    {
-        name: 'Page B', pv: 1398, amt: 2210,
-    },
-    {
-        name: 'Page C', pv: 9800, amt: 2290,
-    },
-    {
-        name: 'Page D', pv: 3908, amt: 2000,
-    },
-    {
-        name: 'Page E', pv: 4800, amt: 2181,
-    },
-    {
-        name: 'Page F', pv: 3800, amt: 2500,
-    },
-    {
-        name: 'Page G', pv: 4300, amt: 2100,
-    },
-];
 
 class Crypto extends React.Component {
     constructor(props) {
@@ -34,49 +10,71 @@ class Crypto extends React.Component {
 
     componentDidMount() {
         this.props.fetchCryptoHist(this.props.match.params.cryptoId);
-        // need to fetch price of crypto with external API
-
-        /// left off here, make this fetch and then write logic in render method to wait on both AJAX calls
         this.props.fetchCrypto(this.props.match.params.cryptoId);
     }
 
     render() {
+        let {crypto} = this.props
         if (this.props.chartData === undefined || !this.props.chartData) {
             return null;
         }
         return (
             <div className='crypto'>
                 <div className='chart'>
-                    Chart goes here for {} id: {this.props.match.params.cryptoId}
+                    Chart goes here for {crypto.symbol} id: {this.props.match.params.cryptoId}
                     <LineChart
-                        width={500}
-                        height={300}
+                        width={784}
+                        height={230}
                         data={this.props.chartData}
                         margin={{
-                            top: 5, right: 30, left: 0, bottom: 5,
+                            top: 0, right: 0, left: 0, bottom: 0,
                         }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
+                        <XAxis 
+                            hide={true}
+                            // dataKey="time"
+                            /*axisLine={false}*/ 
+                            tickLine={false}/>
                         <YAxis 
-                            hide={true}/>
-                        <Tooltip />
-                        <Legend />
-                        <Line type="monotone" dataKey="close" stroke="#1552F0" activeDot={{ r: 8 }} strokeWidth={2} />
+                            hide={true}
+                            domain={[dataMin => (dataMin * 0.95), dataMax => (dataMax * 1.05)]}/>
+                        {/* <Tooltip cursor={false} /> */}
+                        <Tooltip 
+                        cursor={false}
+                        labelStyle={{ display: 'none' }}
+                        // offset={-40}
+                        position={{ y: -20 }}
+                        isAnimationActive={false}
+                        itemStyle={{ color: "rgb(255,255,255)", backgroundColor: "rgb(80, 80, 100)", padding: 8, textAlign: 'center', fontSize: 18, fontWeight: 500 }} />
+                        <Line type="monotone"
+                            dataKey="close"
+                            stroke="#1552F0"
+                            activeDot={{ r: 5 }}
+                            strokeWidth={1.8}
+                            dot={false}
+                            name="$"
+                        />
                     </LineChart>
                 </div>
                 <div className='detail'>
-                    market cap
-                    volume
-                    circulating supply
-                    all time high
-                    trading activity
-                    typical hold time
-                    popularity on coin base
+                    <h6>Market Cap</h6>
+                    <span>{crypto['MKTCAP']}</span>
+                    <h6>volume</h6>
+                    <span>{crypto['VOLUME24HOUR']}</span>
+                    <h6>circulating supply</h6>
+                    <span>{crypto['SUPPLY']}</span>
+                    <h6>all time high</h6>
+                    <span></span>
+                    <h6>trading activity</h6>
+                    <span></span>
+                    <h6>typical hold time</h6>
+                    <span></span>
+                    <h6>popularity on coin base</h6>
+                    <span></span>
                 </div>
             </div>
         );
     }
 }
 
-export default Crypto;
+export default Crypto

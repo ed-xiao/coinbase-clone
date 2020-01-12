@@ -14,8 +14,15 @@ class Crypto < ApplicationRecord
         # https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,DASH&tsyms=BTC,USD,EUR&api_key=INSERT-YOUR-API-KEY-HERE
     end
 
+    def self.fetch_crypto_detail(symbol)
+        # url = "https://min-api.cryptocompare.com/data/generateAvg?fsym=#{symbol}&tsym=USD&e=Kraken"
+        url = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=#{symbol}&tsyms=USD"
+        response = Faraday.get url
+        values = JSON.parse(response.body)
+    end
+
     def self.fetch_historical_value(symbol)
-        url = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=#{symbol}&tsym=USD&limit=30"
+        url = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=#{symbol}&tsym=USD&limit=90"
         response = Faraday.get url
         values = JSON.parse(response.body)
     end
