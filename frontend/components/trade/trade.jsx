@@ -9,12 +9,26 @@ class Trade extends React.Component {
             transaction_type: 'buy'
         };
         this.handleClick = this.handleClick.bind(this);
+        this.handleOrderClick = this.handleOrderClick.bind(this);
     }
 
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    handleOrderClick(orderType) {
+        return (e) => {
+            let tradeTop = document.getElementsByClassName('trade-top');
+            tradeTop[0].children[0].classList.remove('active');
+            tradeTop[0].children[1].classList.remove('active');
+            tradeTop[0].children[2].classList.remove('active');
+            e.target.classList.add('active')
+            this.setState({
+                transaction_type: orderType 
+            })
+        }
     }
 
     handleClick(e) {
@@ -27,9 +41,12 @@ class Trade extends React.Component {
         return (
             <div className='widget-trade'>
                 <div className='trade-top'>
-                    <div onClick={() => this.setState({transaction_type: 'buy'})}>Buy</div>
-                    <div onClick={() => this.setState({transaction_type: 'sell' })}>Sell</div>
-                    {<div onClick={() => this.setState({transaction_type: 'convert' })}>Convert</div>}
+                    {/* <div onClick={() => this.setState({transaction_type: 'buy'})}>Buy</div> */}
+                    <div className='active' onClick={this.handleOrderClick("buy")}>Buy</div>
+                    <div onClick={this.handleOrderClick("sell")}>Sell</div>
+                    <div onClick={this.handleOrderClick("convert")}>Convert</div>
+                    {/* <div onClick={() => this.setState({transaction_type: 'sell' })}>Sell</div> */}
+                    {/* {<div onClick={() => this.setState({transaction_type: 'convert' })}>Convert</div>} */}
                 </div>
                 <div className='trade-middle'>
                     <input type="number" placeholder='0 units' minLength='1' onChange={this.update('units')}/>

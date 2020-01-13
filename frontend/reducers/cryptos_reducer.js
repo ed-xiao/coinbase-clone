@@ -11,6 +11,7 @@ const cryptosReducer = (state = {}, action) => {
         case RECEIVE_PORT_CRYPTOS:
             return Object.assign({}, action.allPortCryptos.cryptos); //need to key into "cryptos"
         case RECEIVE_CRYPTO_HIST:
+            // maybe can use lodash to deep merge these states instead of this nested logic
             cryptoId = Object.keys(action.crypto)[0];
             data = action.crypto[cryptoId]
             if (!nextState[cryptoId]) {
