@@ -1,9 +1,9 @@
 .portfolio {
     display: flex;
     flex-direction: column;
-
+    min-width: 575px;
     max-width: 575px;
-    width: 578px;
+    // width: 578px;
     min-height: 460px;
     // min-height: 240px;
     margin-bottom: 24px;

@@ -18,6 +18,7 @@ class Trade extends React.Component {
     }
 
     handleClick(e) {
+        this.props.closeModal();
         this.props.createTransaction(this.state)
     }
 
@@ -28,20 +29,23 @@ class Trade extends React.Component {
                 <div className='trade-top'>
                     <div onClick={() => this.setState({transaction_type: 'buy'})}>Buy</div>
                     <div onClick={() => this.setState({transaction_type: 'sell' })}>Sell</div>
-                    <div onClick={() => this.setState({transaction_type: 'convert' })}>Convert</div>
+                    {<div onClick={() => this.setState({transaction_type: 'convert' })}>Convert</div>}
                 </div>
-                <div>
+                <div className='trade-middle'>
                     <input type="number" placeholder='0 units' minLength='1' onChange={this.update('units')}/>
+                    <button type='button' onClick={this.handleClick}>
+                        {transaction_type.slice(0, 1).toUpperCase().concat(transaction_type.slice(1))} Crypto
+                    </button>
                 </div>
                 <div className='trade-bottom'>
-                    <select name="" id="">
+                    {/* <select name="" id="">
                         <option value="">BTC</option>
                         <option value="">ETH</option>
                         <option value="">LTC</option>
-                    </select>
-                    <button type='button' onClick={this.handleClick}>
-                        {transaction_type.slice(0,1).toUpperCase().concat(transaction_type.slice(1))} Crypto
-                    </button>
+                        <option value="">XRP</option>
+                        <option value="">USDT</option>
+                        <option value="">EOS</option>
+                    </select> */}
                 </div>
             </div>
         )
