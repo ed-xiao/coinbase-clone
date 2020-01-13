@@ -14,17 +14,21 @@ import NavContainer from '../components/nav/nav_container';
 import Welcome from '../components/welcome/welcome';
 import Footer from '../components/footer/footer';
 import CryptoContainer from '../components/crypto/crypto_container';
+import Modal from '../components/modal/modal';
 
 // update line 21 to be new portfolio container
 const App = () => (
     <div className='top'>
+        <Modal />
         {/* <Route path="/" component={NavContainer} /> */}
-        <NavContainer />
+        <header>
+            <NavContainer />
+        </header>
         <Switch>
             <AuthRoute exact path='/signup' component={SignupFormContainer} />
             <AuthRoute exact path='/login' component={LoginFormContainer} />
             <ProtectedRoute exact path='/cryptos/:cryptoId' component={CryptoContainer} />
-            <UnprotectedRoute path="/" component={Welcome} />   //not logged in
+            <UnprotectedRoute exact path="/" component={Welcome} />   //not logged in
             {/* <ProtectedRoute exact path="/home" component={PortContainer} />   // logged in */}
             <Redirect to="/" />
         </Switch>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { openModal, closeModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import { createTransaction } from '../../actions/trade_actions';
 import Trade from './trade';
 
@@ -34,9 +34,10 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return ({
-        createTransaction: (trx) => dispatch(createTransaction(trx))
+        createTransaction: (trx) => dispatch(createTransaction(trx)),
+        openModal: () => dispatch(openModal('trade')),
+        closeModal: () => dispatch(closeModal())
     })
 }
-
 
 export default connect(null, mDTP)(Trade);
