@@ -4,8 +4,12 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(17, 51, 83, 0.6);;
   z-index: 10;
+  will-change: opacity;
+  overflow: scroll;
+  opacity: 1;
+  transition: opacity 250ms ease 0s;
 }
 
 .modal-child {

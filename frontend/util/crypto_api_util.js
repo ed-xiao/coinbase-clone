@@ -15,3 +15,9 @@ export const fetchCrypto = (cryptoId) => (
         url: `api/cryptos/${cryptoId}`
     })
 )
+
+export const fetchCryptos = () => (
+    $.ajax({
+        url: 'api/cryptos'
+    })
+)

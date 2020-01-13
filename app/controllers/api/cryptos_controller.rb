@@ -7,6 +7,10 @@ class Api::CryptosController < ApplicationController
         @crypto = @crypto['Data']['Data']
     end
 
+    def index
+        @cryptos = Crypto.all
+    end
+
     def show
         @crypto = Crypto.find(params[:id])
         # @value = Crypto.fetch_current_value([@crypto['symbol']])

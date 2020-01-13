@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { createTransaction } from '../../actions/trade_actions';
+import { fetchCryptos } from '../../actions/crypto_actions';
 import Trade from './trade';
 
 //
@@ -35,6 +36,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return ({
         createTransaction: (trx) => dispatch(createTransaction(trx)),
+        fetchCryptos: () => dispatch(fetchCryptos()),
         openModal: () => dispatch(openModal('trade')),
         closeModal: () => dispatch(closeModal())
     })

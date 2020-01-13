@@ -1,6 +1,6 @@
 import { RECEIVE_PORT_CRYPTOS } from '../actions/portfolio_actions';
-import { RECEIVE_CRYPTO_HIST } from '../actions/crypto_actions';
-import { RECEIVE_CRYPTO } from '../actions/crypto_actions';
+import { RECEIVE_CRYPTO_HIST, RECEIVE_CRYPTO, RECEIVE_CRYPTOS } from '../actions/crypto_actions';
+import { merge } from 'lodash';
 
 const cryptosReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -30,6 +30,8 @@ const cryptosReducer = (state = {}, action) => {
                 nextState[cryptoId] = action.crypto[cryptoId];
                 return nextState;
             };
+        case RECEIVE_CRYPTOS:
+            return merge({}, nextState, action.cryptos);
         default:
             return state;
     };
