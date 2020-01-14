@@ -97,6 +97,8 @@
             overflow: hidden;
             outline: none;
             background: rgb(255, 255, 255);
+
+            margin-top: 60px; //actual coinbase doesn't have a margin
         }
 
         .trade-crypto-selector {
@@ -118,7 +120,8 @@
             border-image: initial;
             border-radius: 4px;
 
-            margin-top: 60px;
+            // margin-top: 60px;    //this is for actual coinbase spacing with button to select payment method
+            margin-top: 88px;
 
             p {
                 font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
