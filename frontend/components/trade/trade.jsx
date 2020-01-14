@@ -12,6 +12,7 @@ class Trade extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.handleOrderClick = this.handleOrderClick.bind(this);
+        this.openSelectModal = this.openSelectModal.bind(this);
     }
 
     componentDidMount() {
@@ -42,6 +43,10 @@ class Trade extends React.Component {
         this.props.createTransaction(this.state)
     }
 
+    openSelectModal() {
+        this.props.openModal();
+    }
+
     coinModal() {
         // new modal of all cryptos
     }
@@ -52,6 +57,7 @@ class Trade extends React.Component {
         // if (this.state.symbol === '') {
         //     return null;
         // }
+        let imageSource = window[this.state.symbol];
         return (
             <div className='widget-trade'>
                 <div className='trade-top'>
@@ -66,13 +72,13 @@ class Trade extends React.Component {
                     <div>
                         {/* {errors go here} */}
                     </div>
-                    <div className='trade-crypto-selector'>
+                    <div className='trade-crypto-selector' onClick={this.openSelectModal}>
                         <p>
                             Buy
                         </p>
                         <div>
                             <div>
-                                <img src={`window.${this.state.symbol}`} />
+                                <img src={imageSource} />
                             </div>
                             <p>
                                 {this.state.name}
@@ -84,7 +90,6 @@ class Trade extends React.Component {
                     </button>
                 </div>
                 <div className='trade-bottom'>
-                    {this.state.symbol} balance
                 </div>
             </div>
         )
