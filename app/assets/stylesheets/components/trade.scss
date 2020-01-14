@@ -98,15 +98,77 @@
             background: rgb(255, 255, 255);
         }
 
+        .trade-crypto-selector {
+            display: flex;
+            cursor: pointer;
+            -webkit-box-pack: justify;
+            // justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 16px;
+            min-width: 320px;
+            max-height: 56px;
+
+            margin-bottom: 16px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(236, 239, 241);
+            border-image: initial;
+            border-radius: 4px;
+
+            margin-top: 60px;
+
+            p {
+                font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+                font-weight: 400;
+                color: rgba(17, 51, 83, 0.6);
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                // overflow: hidden;
+                // padding: 0px;
+                // margin: 0px;
+
+                margin-right: 60px;
+            }
+            
+            div {
+                display: flex;
+                max-height: 24px;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    flex-shrink: 0;
+                }
+
+                p {
+                    // font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    font-weight: 400;
+                    color: rgb(5, 15, 25);
+                    padding: 0px;
+                    margin: 0px 0px 0px 8px;
+                    // text-overflow: ellipsis;
+                    // white-space: nowrap;
+                    // overflow: hidden;
+                }
+            }
+        }
+
         button {
-            padding: 20px;
+            padding: 24px;
             border-radius: 4px;
             // margin-top: 24px;
             text-align: center;
             background: $blue;
             color: $white;
-            font-size: 20px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 500;
+            width: 100%;
         }   
         button:hover {
             cursor: pointer;
