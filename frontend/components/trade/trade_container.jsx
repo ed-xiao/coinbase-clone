@@ -5,8 +5,6 @@ import { createTransaction } from '../../actions/trade_actions';
 import { fetchCryptos } from '../../actions/crypto_actions';
 import Trade from './trade';
 
-//
-
 // const mSTP = ({ errors }) => {
 //     return {
 //         errors: errors.session,
@@ -14,9 +12,15 @@ import Trade from './trade';
 //     };
 // };
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
+    // debugger;
+    let defaultCryptoId = 0;
+    if (ownProps.path !== '/') {
+        defaultCryptoId = ownProps.path.slice(9)
+    }
     return ({
-        portfolio: state.entities.portfolio
+        // portfolio: state.entities.portfolio,
+        defaultCryptoId: defaultCryptoId
     });
 }
 
@@ -37,9 +41,10 @@ const mDTP = dispatch => {
     return ({
         createTransaction: (trx) => dispatch(createTransaction(trx)),
         fetchCryptos: () => dispatch(fetchCryptos()),
-        openModal: () => dispatch(openModal('trade')),
+        openModal: () => dispatch(openModal('selectCrypto')),
         closeModal: () => dispatch(closeModal())
     })
 }
 
+// export default connect(mSTP, mDTP)(Trade);
 export default connect(null, mDTP)(Trade);

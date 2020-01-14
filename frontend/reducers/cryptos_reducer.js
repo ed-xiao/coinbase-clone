@@ -9,27 +9,35 @@ const cryptosReducer = (state = {}, action) => {
     let data;
     switch (action.type) {
         case RECEIVE_PORT_CRYPTOS:
+            //do I need to deep merge here? may overwrite historical crypto data
             return Object.assign({}, action.allPortCryptos.cryptos); //need to key into "cryptos"
         case RECEIVE_CRYPTO_HIST:
-            // maybe can use lodash to deep merge these states instead of this nested logic
+            // cryptoId = Object.keys(action.crypto)[0];
+            // data = action.crypto[cryptoId]
+            // if (!nextState[cryptoId]) {
+            //     nextState[cryptoId] = {chartData: ''}
+            // }
+            // nextState[cryptoId]['chartData'] = data
+            // debugger;
+            // return nextState;
+            // action.crypto is {2: []}
             cryptoId = Object.keys(action.crypto)[0];
-            data = action.crypto[cryptoId]
-            if (!nextState[cryptoId]) {
-                nextState[cryptoId] = {chartData: ''}
-            }
-            nextState[cryptoId]['chartData'] = data
-            return nextState;
+            let chartData = {[cryptoId]: {chartData: action.crypto[cryptoId]}}
+            return merge({}, nextState, chartData);
         case RECEIVE_CRYPTO:
-            cryptoId = Object.keys(action.crypto)[0];
-            if (Object.values(nextState).length > 0 && nextState[cryptoId]['chartData']) {
-                data = nextState[cryptoId]['chartData'];
-                nextState[cryptoId] = action.crypto[cryptoId];
-                nextState[cryptoId]['chartData'] = data;
-                return nextState;
-            } else {
-                nextState[cryptoId] = action.crypto[cryptoId];
-                return nextState;
-            };
+            // cryptoId = Object.keys(action.crypto)[0];
+            // if (Object.values(nextState).length > 0 && nextState[cryptoId]['chartData']) {
+            //     data = nextState[cryptoId]['chartData'];
+            //     nextState[cryptoId] = action.crypto[cryptoId];
+            //     nextState[cryptoId]['chartData'] = data;
+            //     debugger; //this is wiping out 'value'
+            //     return nextState;
+            // } else {
+            //     nextState[cryptoId] = action.crypto[cryptoId];
+            //     debugger;
+            //     return nextState;
+            // };
+            return merge({}, nextState, action.crypto);
         case RECEIVE_CRYPTOS:
             return merge({}, nextState, action.cryptos);
         default:

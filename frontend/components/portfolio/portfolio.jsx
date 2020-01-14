@@ -1,5 +1,6 @@
 import React from 'react';
 import PortfolioItem from './portfolio_item';
+// import { trackPromise } from 'react-promise-tracker';
 
 class Portfolio extends React.Component {
     constructor(props) {
@@ -8,6 +9,9 @@ class Portfolio extends React.Component {
     }
 
     componentDidMount() {
+        // trackPromise(
+        //     this.props.fetchPortfolio()
+        // )
         this.props.fetchPortfolio();
         // need to fetch price of crypto with external API
     }
@@ -37,7 +41,18 @@ class Portfolio extends React.Component {
         this.sumTotalBalance();
         if (Object.values(this.props.portfolio).length === 0) {
             // console.log('portfolio is empty object')
-            return null;
+            return (
+                <div style={{
+                    width: "575px",
+                    minHeight: "500px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    margin: "40px",
+                }}>
+                    <img src={window.yoshiURL} />
+                </div>
+            )
         } else {
             // console.log('portfolio is not undef')
             arrayOfPortfolioItems = this.createTableItems();
@@ -49,8 +64,8 @@ class Portfolio extends React.Component {
                         <h2>Your Portfolio</h2>
                     </div>
                     <div className='portfolio-right'>
-                        <a href='#'>List</a>
-                        <a href='#'>Chart</a>
+                        {/* <a href='#'>List</a> */}
+                        {/* <a href='#'>Chart</a> */}
                     </div>
                 </div>
                 <div className='portfolio-body'>
