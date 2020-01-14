@@ -1,6 +1,7 @@
 import React from 'react';
 import PortfolioItem from './portfolio_item';
 // import { trackPromise } from 'react-promise-tracker';
+import Loader from 'react-loader-spinner';
 
 class Portfolio extends React.Component {
     constructor(props) {
@@ -36,22 +37,50 @@ class Portfolio extends React.Component {
         return totalBalance.toFixed(2);
     }
 
-    render() {
-        let arrayOfPortfolioItems = "";
-        this.sumTotalBalance();
-        if (Object.values(this.props.portfolio).length === 0) {
-            // console.log('portfolio is empty object')
-            return (
-                <div style={{
+    loading() {
+        return (
+            <div
+                style= {{
                     width: "575px",
                     minHeight: "500px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     margin: "40px",
-                }}>
-                    <img src={window.yoshiURL} />
-                </div>
+                    boxShadow: "rgba(17, 51, 83, 0.02) 0px 4px 12px 0px",
+                    backgroundColor: "rgb(255, 255, 255)",
+                    borderRadius: "4px",
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: "rgb(236, 239, 241)"
+                }}
+            >
+                {/* <Loader type="Oval" color= "#1552F0" height = "100" width = "100" /> */}
+                <Loader type="Grid" color= "#1552F0" height = "100" width = "100" />
+                {/* <Loader type="TailSpin" color= "#1552F0" height = "100" width = "100" /> */}
+            </div >
+        )
+        // return (
+        //     <div style={{
+        //         width: "575px",
+        //         minHeight: "500px",
+        //         display: "flex",
+        //         justifyContent: "center",
+        //         alignItems: "center",
+        //         margin: "40px",
+        //     }}>
+        //         <img src={window.yoshiURL} />
+        //     </div>
+        // )
+    }
+
+    render() {
+        let arrayOfPortfolioItems = "";
+        this.sumTotalBalance();
+        if (Object.values(this.props.portfolio).length === 0) {
+            // console.log('portfolio is empty object')
+            return (
+                this.loading()
             )
         } else {
             // console.log('portfolio is not undef')

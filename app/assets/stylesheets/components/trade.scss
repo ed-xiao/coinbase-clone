@@ -324,11 +324,14 @@
                     margin: 0px;
                 }
             }
+            
+            &:hover {
+                cursor: pointer;
+            }
         }
 
-        div:hover {
+        > div:hover {
             background-color: rgba(17, 51, 83, 0.02);
-            cursor: pointer;
         }
 
     }
