@@ -3,6 +3,7 @@ class Crypto < ApplicationRecord
 
     has_many :portfolios
     has_many :transactions
+    has_many :watchlists
 
     def self.fetch_current_value(symbols)
         url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms='

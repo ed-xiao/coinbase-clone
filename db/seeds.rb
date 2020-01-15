@@ -56,3 +56,11 @@ Transaction.create([
     {user_id: demo_user.id, crypto_id: bitcoin.id, units: 100.5, price: 100000.00, transaction_type: 'buy'},
     {user_id: demo_user.id, crypto_id: ethereum.id, units: 10, price: 2100.00, transaction_type: 'sell'}
 ])
+
+Watchlist.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('watchlists')
+Watchlist.create([
+    {user_id: demo_user.id, crypto_id: bitcoin.id},
+    {user_id: demo_user.id, crypto_id: ethereum.id},
+    {user_id: demo_user.id, crypto_id: litecoin.id}
+])

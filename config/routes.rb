@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :transactions, only: [:index, :create]
     resources :cryptos, only: [:index, :show]
     get '/cryptoshist/:id', to: 'cryptos#hist'
+    resources :watchlists, only: [:index, :create, :destroy]
   end
 end
