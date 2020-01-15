@@ -3,11 +3,18 @@ import React from 'react';
 class Trade extends React.Component {
     constructor(props) {
         super(props);
+        let symbol = 'BTC';
+        let name = 'Bitcoin';
+        // debugger
+        if (this.props.defaultCrypto) {
+            symbol = this.props.defaultCrypto.symbol;
+            name = this.props.defaultCrypto.name;
+        };
         this.state = {
-            symbol: 'BTC',  //default to Bitcoin? this is what actually is sent in the order
+            symbol: symbol,  //default to Bitcoin? this is what actually is sent in the order
             units: '',
             transaction_type: 'buy',
-            name: 'Bitcoin', //default to Bitcoin? this is just for display purposes in the Trade Modal
+            name: name, //default to Bitcoin? this is just for display purposes in the Trade Modal
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -40,15 +47,11 @@ class Trade extends React.Component {
 
     handleClick(e) {
         this.props.closeModal();
-        this.props.createTransaction(this.state)
+        this.props.createTransaction(this.state);
     }
 
     openSelectModal() {
         this.props.openModal();
-    }
-
-    coinModal() {
-        // new modal of all cryptos
     }
 
     render() {
@@ -92,7 +95,7 @@ class Trade extends React.Component {
                 <div className='trade-bottom'>
                 </div>
             </div>
-        )
+        );
     }
 }
 
