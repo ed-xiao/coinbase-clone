@@ -14,13 +14,13 @@ import Trade from './trade';
 
 const mSTP = (state, ownProps) => {
     // debugger;
-    let defaultCryptoId = 0;
-    if (ownProps.path !== '/') {
-        defaultCryptoId = ownProps.path.slice(9)
-    }
+    // let defaultCryptoId = 0;
+    // if (ownProps.path !== '/') {
+    //     defaultCryptoId = ownProps.path.slice(9)
+    // }
     return ({
         // portfolio: state.entities.portfolio,
-        defaultCryptoId: defaultCryptoId
+        defaultCrypto: state.ui.defaultCrypto
     });
 }
 
@@ -47,4 +47,4 @@ const mDTP = dispatch => {
 }
 
 // export default connect(mSTP, mDTP)(Trade);
-export default connect(null, mDTP)(Trade);
+export default connect(mSTP, mDTP)(Trade);
