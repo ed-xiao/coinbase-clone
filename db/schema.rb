@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_043327) do
+ActiveRecord::Schema.define(version: 2020_01_15_183759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_043327) do
     t.string "transaction_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "crypto_id"], name: "index_transactions_on_user_id_and_crypto_id", unique: true
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
@@ -55,6 +56,13 @@ ActiveRecord::Schema.define(version: 2020_01_10_043327) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
+  end
+
+  create_table "watchlists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "crypto_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
