@@ -24,7 +24,6 @@ const mSTP = (state, ownProps) => {
     });
 }
 
-//figure out below
 // const mDTP = dispatch => {
 //     return {
 //         processForm: (user) => dispatch(login(user)),

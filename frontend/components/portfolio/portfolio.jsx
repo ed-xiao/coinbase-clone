@@ -41,8 +41,9 @@ class Portfolio extends React.Component {
         return (
             <div
                 style= {{
-                    width: "575px",
+                    minWidth: "575px",
                     minHeight: "500px",
+                    maxHeight: "500px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",

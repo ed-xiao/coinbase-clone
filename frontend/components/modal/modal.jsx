@@ -15,8 +15,8 @@ function Modal({ modal, closeModal, location }) {
     let component;
     switch (modal) {
         case 'trade':
-            component = <TradeContainer path={location.pathname}/>;  //Trade component doesn't need to know path
-            // component = <TradeContainer />;
+            // component = <TradeContainer path={location.pathname}/>;  //Trade component doesn't need to know path
+            component = <TradeContainer />;
             break;
         case 'selectCrypto':
             component = <SelectCryptoContainer />

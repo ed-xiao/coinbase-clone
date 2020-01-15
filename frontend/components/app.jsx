@@ -19,8 +19,8 @@ import Modal from '../components/modal/modal';
 // update line 21 to be new portfolio container
 const App = () => (
     <div className='top'>
-        <ProtectedRoute path="/" component={Modal} />
-        {/* <Modal /> */}
+        {/* <ProtectedRoute path="/" component={Modal} /> */}
+        <Modal />
         {/* <Route path="/" component={NavContainer} /> */}
         <header>
             <NavContainer />

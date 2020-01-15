@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :portfolios, only: [:index]
-    resources :transactions, only: [:create]
+    resources :transactions, only: [:index, :create]
     resources :cryptos, only: [:index, :show]
     get '/cryptoshist/:id', to: 'cryptos#hist'
   end

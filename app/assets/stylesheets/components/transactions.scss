@@ -1,0 +1,81 @@
+.transactions {
+    display: flex;
+    flex-direction: column;
+    min-width: 575px;
+    max-width: 575px;
+    min-height: 460px;
+    margin-bottom: 24px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    background-color: white;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #eceff1;
+    border-image: initial;
+    box-sizing: inherit;
+    flex: 1 1 auto;
+    margin: 40px;
+    color: #1652f0;
+
+    height: min-content; //added in this and commented out line 43
+
+    .transactions-header {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+        flex-direction: row;
+        flex-shrink: 0;
+        height: 55px;
+        padding: 0px 24px;
+        border-bottom: 1px solid #eceff1;
+
+        h2 {
+            line-height: 1.3;
+            color: #050f19;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+    .transactions-body {
+        // height: calc(100% - 56px);  maybe I need this in? real coinbase had this
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+            border-color: grey;
+            
+                tbody {
+                    border-collapse: collapse;
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                    border-spacing: 2px;
+
+                    tr {
+                        border-collapse: collapse;
+                        border-bottom: 1px solid #eceff1;
+                        // height: 70px;   //do I want to fix the height?? probably not
+
+                        td {
+                            padding: 10px;
+                            font-weight: 400;
+                            text-align: right;
+                            color: #050f19;
+
+                            p {
+                                font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                                font-size: 14px;
+                                line-height: 1.6;
+                                font-weight: 400;
+                                color: #050f19;
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
