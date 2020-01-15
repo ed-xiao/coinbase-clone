@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :portfolios, only: [:index]
     resources :transactions, only: [:create]
+    resources :cryptos, only: [:index, :show]
+    get '/cryptoshist/:id', to: 'cryptos#hist'
   end
 end

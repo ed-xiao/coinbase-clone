@@ -1,4 +1,4 @@
-import * as PortfolioApiUtil from '../util/portfolio_api_util'
+import * as PortfolioApiUtil from '../util/portfolio_api_util';
 
 export const RECEIVE_PORT_CRYPTOS = 'RECEIVE_PORT_CRYPTOS';
 

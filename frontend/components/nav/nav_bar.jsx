@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default ({ currentUser, logout }) => {
+export default ({ currentUser, logout, openModal }) => {
     const display = currentUser ? (
         <div className="nav-wrapper">
             <div className='nav-center'>
@@ -10,7 +10,7 @@ export default ({ currentUser, logout }) => {
                 <Link className="nav-link" to="/">Prices</Link>
             </div>
             <div className="nav-right">
-                <button className="nav-link nav-trade">Trade</button>
+                <button className="nav-link nav-trade" onClick={openModal}>Trade</button>
                 <button className="nav-link" onClick={logout}>Logout</button>
             </div>
         </div>
@@ -22,11 +22,9 @@ export default ({ currentUser, logout }) => {
     );
 
     return (
-        <header>
-            <nav className='nav-bar'>
-                <Link to="/" className="nav-link nav-logo">coinbase</Link>
-                {display}
-            </nav>
-        </header>
+        <nav className='nav-bar'>
+            <Link to="/" className="nav-link nav-logo">coinbase</Link>
+            {display}
+        </nav>
     );
 };

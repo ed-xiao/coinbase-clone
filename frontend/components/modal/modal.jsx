@@ -1,20 +1,29 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+// import LoginFormContainer from '../session_form/login_form_container';
+// import SignupFormContainer from '../session_form/signup_form_container';
 import TradeContainer from '../trade/trade_container';
+import SelectCryptoContainer from '../trade/select_crypto_container';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, location }) {
+    // location.pathname = '/cryptos/2'
+    // location.pathname = '/'
     if (!modal) {
         return null;
     }
     let component;
     switch (modal) {
         case 'trade':
-            component = <TradeContainer />;
+            component = <TradeContainer path={location.pathname}/>;  //Trade component doesn't need to know path
+            // component = <TradeContainer />;
+            break;
+        case 'selectCrypto':
+            component = <SelectCryptoContainer />
             break;
         // case 'signup':
-        //     component = <SignupFormContainer />;
-        //     break;
+            // component = <SignupFormContainer />;
+            // break;
         default:
             return null;
     }

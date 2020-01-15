@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { createTransaction } from '../../actions/trade_actions';
+import { fetchCryptos } from '../../actions/crypto_actions';
 import Trade from './trade';
-
-//
 
 // const mSTP = ({ errors }) => {
 //     return {
@@ -13,9 +12,15 @@ import Trade from './trade';
 //     };
 // };
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
+    // debugger;
+    let defaultCryptoId = 0;
+    if (ownProps.path !== '/') {
+        defaultCryptoId = ownProps.path.slice(9)
+    }
     return ({
-        portfolio: state.entities.portfolio
+        // portfolio: state.entities.portfolio,
+        defaultCryptoId: defaultCryptoId
     });
 }
 
@@ -34,9 +39,12 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
     return ({
-        createTransaction: (trx) => dispatch(createTransaction(trx))
+        createTransaction: (trx) => dispatch(createTransaction(trx)),
+        fetchCryptos: () => dispatch(fetchCryptos()),
+        openModal: () => dispatch(openModal('selectCrypto')),
+        closeModal: () => dispatch(closeModal())
     })
 }
 
-
+// export default connect(mSTP, mDTP)(Trade);
 export default connect(null, mDTP)(Trade);
