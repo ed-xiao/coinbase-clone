@@ -1,5 +1,6 @@
 import { RECEIVE_PORT_CRYPTOS } from '../actions/portfolio_actions';
 import { RECEIVE_CRYPTO_HIST, RECEIVE_CRYPTO, RECEIVE_CRYPTOS } from '../actions/crypto_actions';
+import { RECEIVE_HOME } from '../actions/home_actions';
 import { merge } from 'lodash';
 
 const cryptosReducer = (state = {}, action) => {
@@ -10,7 +11,9 @@ const cryptosReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_PORT_CRYPTOS:
             //do I need to deep merge here? may overwrite historical crypto data
-            return Object.assign({}, action.allPortCryptos.cryptos); //need to key into "cryptos"
+            return merge({}, nextState, action.allPortCryptos.cryptos); //need to key into "cryptos"
+        case RECEIVE_HOME:
+            return merge({}, nextState, action.allHomeData[0].cryptos, action.allHomeData[1]);
         case RECEIVE_CRYPTO_HIST:
             // cryptoId = Object.keys(action.crypto)[0];
             // data = action.crypto[cryptoId]

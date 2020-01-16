@@ -1,5 +1,6 @@
 import { RECEIVE_PORT_CRYPTOS } from '../actions/portfolio_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_HOME } from '../actions/home_actions';
 // import { RECEIVE_CRYPTO_HIST } from '../actions/crypto_actions';
 // import { RECEIVE_CRYPTO } from '../actions/crypto_actions';
 
@@ -14,6 +15,8 @@ const portfolioReducer = (state = {}, action) => {
         //     return {};
         // case RECEIVE_CRYPTO:
         //     return {};
+        case RECEIVE_HOME:
+            return Object.assign({}, action.allHomeData[0].portfolios);
         default:
             return state;
     }

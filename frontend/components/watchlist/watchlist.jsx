@@ -8,8 +8,8 @@ class Watchlist extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchWatches();
-        this.props.fetchCryptos();
+        // this.props.fetchWatches(); //replaced with homefetch
+        // this.props.fetchCryptos(); //replaced with homefetch
     }
 
     loading() {

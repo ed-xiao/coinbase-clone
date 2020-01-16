@@ -13,8 +13,8 @@ class Portfolio extends React.Component {
         // trackPromise(
         //     this.props.fetchPortfolio()
         // )
-        this.props.fetchPortfolio();
-        // need to fetch price of crypto with external API
+        // this.props.fetchPortfolio(); //replaced with below
+        this.props.fetchHomeData();
     }
 
     createTableItems() {

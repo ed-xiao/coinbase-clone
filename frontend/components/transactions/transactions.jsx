@@ -7,8 +7,8 @@ class Transactions extends React.Component {
         super(props);
     }
     componentDidMount() {
-        this.props.fetchTransactions();
-        this.props.fetchCryptos();
+        // this.props.fetchTransactions(); //replaced with homefetch
+        // this.props.fetchCryptos(); //replaced with homefetch
     }
 
     createTableItems() {
