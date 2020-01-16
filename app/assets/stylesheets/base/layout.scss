@@ -20,7 +20,9 @@ body {
 
             .widgets {
                 display: flex;
-                justify-content: space-between;
+                // justify-content: space-between; //this is correct once I have the main div centered
+                justify-content: space-around;
+                flex-wrap: wrap;
             }
         }
     }

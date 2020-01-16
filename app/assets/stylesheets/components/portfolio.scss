@@ -24,6 +24,8 @@
     color: #1652f0;
 
     height: min-content;
+
+    box-shadow: 3px 3px 10px darkgrey;
 }
 
 .portfolio-header {
@@ -56,7 +58,7 @@
 
 .portfolio-header a {
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1.6;
     color: rgba(17, 51, 83, 0.3);
@@ -105,8 +107,8 @@
 .portfolio-body td {
     padding: 10px;
     font-weight: 400;
-    // text-align: left;
-    text-align: right;
+    text-align: left;
+    // text-align: right;
     color: rgb(5, 15, 25);
 
     img {
@@ -137,7 +139,7 @@
 
 .portfolio-body td p {
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.6;
     font-weight: 400;
     color: rgb(5, 15, 25);

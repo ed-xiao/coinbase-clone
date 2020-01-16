@@ -62,5 +62,8 @@ ApplicationRecord.connection.reset_pk_sequence!('watchlists')
 Watchlist.create([
     {user_id: demo_user.id, crypto_id: bitcoin.id},
     {user_id: demo_user.id, crypto_id: ethereum.id},
-    {user_id: demo_user.id, crypto_id: litecoin.id}
+    {user_id: demo_user.id, crypto_id: litecoin.id},
+    {user_id: demo_user.id, crypto_id: ox.id},
+    {user_id: demo_user.id, crypto_id: dai.id},
+    {user_id: demo_user.id, crypto_id: orchid.id}
 ])

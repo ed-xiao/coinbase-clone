@@ -1,13 +1,23 @@
 footer {
     display: flex;
     align-items: center;
-    height: 64px;
-    max-height: 64px;
+    justify-content: center;
+    height: 100px;
+    // max-height: 64px;
     border-top: 1px solid rgb(236, 239, 241);
-    background: $white;
+    background: $blue;
+
+    a {
+        margin-left: 50px;
+        color: $white;
+        i {
+            font-size: 48px;
+            // color: $white;
+        }
+    }
 }
 
-footer a {
-    margin-left: 30px;
-    text-align: center;
-}
+// footer a {
+    // margin-left: 50px;
+    // text-align: center;
+// }
