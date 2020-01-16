@@ -1,6 +1,12 @@
 .top {
     display: flex;
     flex-direction: column;
+
+    header {
+        display: flex;
+        justify-content: center;
+        background: $blue;
+    }
 }
 
 .nav-bar {
@@ -14,6 +20,9 @@
     padding: 0px 20px;
     height: 72px;
     background: $blue;
+
+    width: 100%;
+    max-width: 1200px;
 }
 
 .nav-wrapper {
@@ -22,6 +31,23 @@
     align-items: center;
     width: 100%;
     // margin: 0 70px;
+
+    a {
+        // margin: 0 10px;
+        // display: flex;
+        // height: 72px;
+        // position: relative;
+        // -webkit-box-align: center;
+        // align-items: center;
+        // cursor: pointer;
+        margin-right: 32px;
+
+        // font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.6;
+        transition: color 80ms ease-in-out 0s;
+    }
 }
 
 .nav-center:first-child {
@@ -35,7 +61,8 @@
     a:last-of-type {
         // white-space: nowrap;
         margin-left: 16px;
-        margin-right: 22px;
+        // margin-right: 22px;
+        margin-right: 0px;
         // position: relative;
         // width: auto;
         // color: rgb(255, 255, 255);
@@ -72,23 +99,7 @@
     font-family: 'Lato', sans-serif;
     font-size: 24px;
     font-weight: 700;
-}
-
-.nav-wrapper a {
-    // margin: 0 10px;
-    // display: flex;
-    // height: 72px;
-    // position: relative;
-    // -webkit-box-align: center;
-    // align-items: center;
-    // cursor: pointer;
-    margin-right: 32px;
-
-    // font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.6;
-    transition: color 80ms ease-in-out 0s;
+    padding: 0px;
 }
 
 .nav-trade {

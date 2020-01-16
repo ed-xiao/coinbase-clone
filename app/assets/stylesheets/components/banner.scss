@@ -1,31 +1,46 @@
-.banner {
-    // float: left;
-    // display: block;
+.body-wrapper {
     display: flex;
-    background: $blue;
-    color: $white;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    .banner {
+        // float: left;
+        // display: block;
+        width: 100%;
+        background-color: $blue;
+        display: flex;
+        justify-content: center;
 
-    div:first-of-type {
-        min-width: 400px;
-    }
+        .banner-wrapper {
+            padding: 0 20px;
+            display: flex;
+            background: $blue;
+            color: $white;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+        }
 
-    div h1, div h4 {
-        margin-left: 20px;
-        padding: 10px;
-    }
+        .banner-wrapper:first-of-type {
+            min-width: 400px;
+        }
 
-    div h1:last-of-type {
-        padding-bottom: 30px;
-    }
+        .banner-wrapper h1, .banner-wrapper h4 {
+            // margin-left: 20px;
+            padding: 10px 10px 10px 0;
+        }
 
-    div img{
-        // position: relative;
-        // right: -400px;
-        // bottom: 0px;
-        // top: -20px;
-        // width: 481px;
-        height: 241px;
-        // margin: auto;
+        .banner-wrapper h1:last-of-type {
+            padding-bottom: 30px;
+        }
+
+        .banner-wrapper img{
+            // position: relative;
+            // right: -400px;
+            // bottom: 0px;
+            // top: -20px;
+            // width: 481px;
+            height: 241px;
+            // margin: auto;
+        }
     }
 }

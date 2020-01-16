@@ -97,20 +97,22 @@ class Crypto extends React.Component {
         }
         return (
             <div className='crypto'>
-                <div className='crypto-header'>
-                    <div>
-                        <img src={imageSource} />
-                    </div>
-                    <div>
-                        <h1>
-                            {crypto.name}
-                        </h1>
-                        <h2>
-                            {crypto.symbol}
-                        </h2>
-                    </div>
-                    <div>
-                        <WatchlistButton cryptoId={crypto.id}/>
+                <div className='crypto-header-wrapper'>
+                    <div className='crypto-header'>
+                        <div>
+                            <img src={imageSource} />
+                        </div>
+                        <div>
+                            <h1>
+                                {crypto.name}
+                            </h1>
+                            <h2>
+                                {crypto.symbol}
+                            </h2>
+                        </div>
+                        <div>
+                            <WatchlistButton cryptoId={crypto.id}/>
+                        </div>
                     </div>
                 </div>
                 <div className='crypto-body'>

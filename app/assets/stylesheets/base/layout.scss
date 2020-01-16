@@ -23,6 +23,16 @@ body {
                 // justify-content: space-between; //this is correct once I have the main div centered
                 justify-content: space-around;
                 flex-wrap: wrap;
+                width: 100%;
+                max-width: 1200px;
+                padding: 0 20px;
+
+                .port-trans-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    flex-wrap: wrap;
+                }
             }
         }
     }

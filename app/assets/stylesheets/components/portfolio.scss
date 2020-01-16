@@ -1,8 +1,8 @@
 .portfolio {
     display: flex;
     flex-direction: column;
-    min-width: 575px;
-    max-width: 575px;
+    min-width: 550px;
+    max-width: 550px;
     // width: 578px;
     min-height: 460px;
     // min-height: 240px;
@@ -19,7 +19,7 @@
 
     flex: 1 1 auto;
 
-    margin: 40px;
+    margin: 40px 0;
 
     color: #1652f0;
 
@@ -114,6 +114,10 @@
     img {
         width: 36px;
     }
+
+    &:first-of-type {
+        padding-left: 24px;
+    }
 }
 
 .portfolio-body a:visited {
@@ -129,7 +133,7 @@
 }
 
 .portfolio-body td a h4 {
-    margin-left: 10px;
+    margin-left: 24px;
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     line-height: 1.3;
     color: rgb(5, 15, 25);

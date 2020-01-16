@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     //width of portfolio is 575px so this is slightly wider
-    min-width: 700px;
-    max-width: 700px;
+    min-width: 550px;
+    max-width: 550px;
     min-height: 460px;
     margin-bottom: 24px;
     box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
@@ -15,7 +15,7 @@
     border-image: initial;
     box-sizing: inherit;
     flex: 1 1 auto;
-    margin: 40px;
+    margin: 40px 0;
     color: #1652f0;
 
     height: min-content; //added in this and commented out line 43
@@ -75,6 +75,9 @@
                                 line-height: 1.6;
                                 font-weight: 400;
                                 color: #050f19;
+                            }
+                            &:first-of-type {
+                                padding-left: 28px;
                             }
                         }
                     }

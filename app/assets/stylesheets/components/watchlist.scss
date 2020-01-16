@@ -1,9 +1,9 @@
 .watchlist {
     display: flex;
     flex-direction: column;
-    // min-width: 1200px;
-    min-width: 81%;
-    max-width: 1200px;
+    min-width: 1000px;
+    // min-width: 81%;
+    // max-width: 1200px;
     // min-height: 460px;
     margin-bottom: 24px;
     box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
@@ -15,7 +15,8 @@
     border-image: initial;
     box-sizing: inherit;
     flex: 1 1 auto;
-    margin: 40px;
+    // margin: 40px;
+    margin: 80px 0;
     color: #050f19;
     height: min-content;
     box-shadow: 3px 3px 10px darkgrey;
@@ -144,7 +145,12 @@
                                 }
                             }
                         }
-
+                    }
+                    &:first-of-type {
+                        color: $lightgrey;
+                    }
+                    &:first-of-type td p {
+                        color: $lightgrey;
                     }
                 }
 

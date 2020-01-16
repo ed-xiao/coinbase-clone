@@ -8,80 +8,91 @@
     //     text-align: center;
     // }
 
-    .crypto-header {
-        display: flex;
-        align-items: center;
-        padding: 40px;
-        border-bottom: 1px solid rgb(236, 239, 241);
-        img {
-            width: 46px;
-        }
-        div:nth-of-type(2) {
+    .crypto-header-wrapper {
+            border-bottom: 1px solid rgb(236, 239, 241);
+
+
+        .crypto-header {
             display: flex;
-            align-items: baseline;
-            h1 {
-                line-height: 1.3;
-                color: rgb(5, 15, 25);
-                font-size: 32px;
-                font-weight: 500;
-                margin: 0 14px 0 24px;
+            align-items: center;
+            padding: 40px 20px;
+            // border-bottom: 1px solid rgb(236, 239, 241);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            img {
+                width: 46px;
             }
-    
-            h2 {
-                line-height: 1.3;
-                color: rgba(17, 51, 83, 0.6);
-                font-size: 26px;
-                font-weight: 500;
-            }
-        }
-        div:last-of-type {
-            margin-left:auto;
-            margin-right:0;
-            button {
-                display:flex;
-                align-items: center;
-                position: relative;
-
-                width: auto;
-                cursor: pointer;
-                font-size: 14px;
-                background-color: rgb(255, 255, 255);
-                color: rgb(5, 15, 25);
-                // margin: 0px;
-                border-radius: 4px;
-                transition: all 80ms ease-in-out 0s;
-                padding: 12px 16px;
-                border-width: 1px;
-                border-style: solid;
-                border-color: rgb(236, 239, 241);
-                // border-image: initial;
-
-                i {
-                    margin-right: 10px;
-                    font-size: 24px;
-                    color: $lightgrey;
+            div:nth-of-type(2) {
+                display: flex;
+                align-items: baseline;
+                h1 {
+                    line-height: 1.3;
+                    color: rgb(5, 15, 25);
+                    font-size: 32px;
+                    font-weight: 500;
+                    margin: 0 14px 0 24px;
                 }
-
-                h2:hover {
-                    color: $blue;
-                }
-
-                &:hover {
-                    border-color: $blue;
+        
+                h2 {
+                    line-height: 1.3;
+                    color: rgba(17, 51, 83, 0.6);
+                    font-size: 26px;
+                    font-weight: 500;
                 }
             }
-            .following i {
-                color: $gold;
+            div:last-of-type {
+                margin-left:auto;
+                margin-right:0;
+                button {
+                    display:flex;
+                    align-items: center;
+                    position: relative;
+
+                    width: auto;
+                    cursor: pointer;
+                    font-size: 14px;
+                    background-color: rgb(255, 255, 255);
+                    color: rgb(5, 15, 25);
+                    // margin: 0px;
+                    border-radius: 4px;
+                    transition: all 80ms ease-in-out 0s;
+                    padding: 12px 16px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: rgb(236, 239, 241);
+                    // border-image: initial;
+
+                    i {
+                        margin-right: 10px;
+                        font-size: 24px;
+                        color: $lightgrey;
+                    }
+
+                    h2:hover {
+                        color: $blue;
+                    }
+
+                    &:hover {
+                        border-color: $blue;
+                    }
+                }
+                .following i {
+                    color: $gold;
+                }
             }
         }
     }
 
     .crypto-body {
         display: flex;
-        // justify-content: space-between;
+        justify-content: space-between;
         flex-wrap: wrap;
         // padding: 0 40px;
-        margin: 40px;
+        margin: 40px auto;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
         .crypto-detail {
             display: flex;
             flex-direction: column;
@@ -97,9 +108,9 @@
             overflow: visible;
             border-radius: 6px;
 
-            margin: 40px;
+            margin: 40px 0;
 
-            margin-right: 120px;
+            margin-right: 40px;
 
             box-shadow: 3px 3px 10px darkgrey;
 
@@ -206,7 +217,7 @@
 
 
 
-        section{
+        section{ //about info
             display: flex;
             flex-direction: column;
             min-height: 310px;
@@ -222,8 +233,9 @@
             border-radius: 6px;
 
             padding: 32px;
-            max-width: 386px;
-            margin: 40px;
+            // max-width: 386px;
+            max-width: 320px;
+            margin: 40px 0;
 
             box-shadow: 3px 3px 10px darkgrey;
 
