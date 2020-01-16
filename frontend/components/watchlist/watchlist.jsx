@@ -16,7 +16,7 @@ class Watchlist extends React.Component {
         return (
             <div
                 style={{
-                    minWidth: "575px",
+                    minWidth: "81%",
                     minHeight: "500px",
                     maxHeight: "500px",
                     display: "flex",
