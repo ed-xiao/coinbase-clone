@@ -34,6 +34,46 @@
                 font-weight: 500;
             }
         }
+        div:last-of-type {
+            margin-left:auto;
+            margin-right:0;
+            button {
+                display:flex;
+                align-items: center;
+                position: relative;
+
+                width: auto;
+                cursor: pointer;
+                font-size: 14px;
+                background-color: rgb(255, 255, 255);
+                color: rgb(5, 15, 25);
+                // margin: 0px;
+                border-radius: 4px;
+                transition: all 80ms ease-in-out 0s;
+                padding: 12px 16px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: rgb(236, 239, 241);
+                // border-image: initial;
+
+                i {
+                    margin-right: 10px;
+                    font-size: 24px;
+                    color: $lightgrey;
+                }
+
+                h2:hover {
+                    color: $blue;
+                }
+
+                &:hover {
+                    border-color: $blue;
+                }
+            }
+            .following i {
+                color: $gold;
+            }
+        }
     }
 
     .crypto-body {

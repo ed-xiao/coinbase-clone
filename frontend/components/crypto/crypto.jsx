@@ -3,6 +3,7 @@ import {
     LineChart, Line, XAxis, YAxis, Tooltip
 } from 'recharts';
 import Loader from 'react-loader-spinner';
+import WatchlistButton from '../watchlist/watchlist_button';
 
 class Crypto extends React.Component {
     constructor(props) {
@@ -107,6 +108,9 @@ class Crypto extends React.Component {
                         <h2>
                             {crypto.symbol}
                         </h2>
+                    </div>
+                    <div>
+                        <WatchlistButton cryptoId={crypto.id}/>
                     </div>
                 </div>
                 <div className='crypto-body'>

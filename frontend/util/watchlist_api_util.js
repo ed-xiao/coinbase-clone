@@ -4,11 +4,11 @@ export const fetchWatches = () => (
     })
 );
 
-export const createWatch = (crypto) => (
+export const createWatch = (watchlist) => (
     $.ajax({
         url: 'api/watchlists',
         method: 'POST',
-        data: { crypto }
+        data: { watchlist }
     })
 );
 

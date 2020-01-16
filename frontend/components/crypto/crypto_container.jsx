@@ -27,6 +27,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
     fetchCryptoHist: (symbol) => dispatch(fetchCryptoHist(symbol)),
     fetchCrypto: (id) => dispatch(fetchCrypto(id))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Crypto);
