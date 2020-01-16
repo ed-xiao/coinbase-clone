@@ -2,7 +2,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 200px;
     // max-height: 64px;
     // border-top: 1px solid rgb(236, 239, 241);
     background: $blue;
@@ -12,7 +12,7 @@ footer {
         margin-left: 50px;
         color: $white;
         i {
-            font-size: 48px;
+            font-size: 80px;
             // color: $white;
         }
     }
