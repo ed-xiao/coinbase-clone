@@ -9,7 +9,7 @@
 
 User.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('users')
-demo_user = User.create(username: 'demo_user', email: 'demo@email.com', password: 'password')
+demo_user = User.create(username: 'demo_user', email: 'waluigi@coinlabo.com', password: 'password')
 
 Crypto.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('cryptos')

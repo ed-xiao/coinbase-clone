@@ -9,7 +9,7 @@ class Welcome extends React.Component {
                     {/* <h2>Buy and sell cryptocurrency</h2> */}
                     {/* <h4>Coinbase is the easiest place to buy, sell, and manage your cryptocurrency portfolio.</h4> */}
                     <h2>Buy and sell KartCoins</h2>
-                    <h4>CoinLabo is the easiest place to buy, sell, and manage your KartCoins portfolio.</h4>
+                    <h4>CoinLabo is the easiest place to buy, sell, and manage your KartCoins portfolio</h4>
                 </div>
                 <div className='welcome-image-text'>
                     {/* <h1>Create your cryptocurrency portfolio today</h1> */}

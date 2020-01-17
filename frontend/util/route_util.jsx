@@ -27,7 +27,7 @@ const Unprotected = ({ component: Component, path, loggedIn, exact }) => (
                 <div className='banner'>
                     <div className='banner-wrapper'>
                         <div>
-                            <h4>Hi there!</h4>
+                            <h4>Hi Waluigi!</h4>
                             <h1>Welcome to CoinLabo.</h1>
                             <h1>Ready to buy KartCoins?</h1>
                         </div>
