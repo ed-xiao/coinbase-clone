@@ -57,7 +57,7 @@ class Portfolio extends React.Component {
                 }}
             >
                 {/* <Loader type="Oval" color= "#1552F0" height = "100" width = "100" /> */}
-                <Loader type="Grid" color="#1552F0" height={100} width={100} />
+                <Loader type="Grid" color="#e4000f" height={100} width={100} />
                 {/* <Loader type="TailSpin" color= "#1552F0" height = "100" width = "100" /> */}
             </div >
         )

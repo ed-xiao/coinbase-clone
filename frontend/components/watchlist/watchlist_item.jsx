@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { translateSym, translateName } from '../../util/labo_util';
 
 class WatchlistItem extends React.Component {
     constructor(props) {
         super(props);
     }
-
-
 
     render() {
         let { order, crypto } = this.props;
@@ -28,10 +27,10 @@ class WatchlistItem extends React.Component {
                         </p>
                         <p>
                             <span>
-                                {crypto.name}
+                                {translateName[crypto.name]}
                             </span>
                             <span>
-                                {crypto.symbol}
+                                {translateSym[crypto.symbol]}
                             </span>
                         </p>
                     </Link>

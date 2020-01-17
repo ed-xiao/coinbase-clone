@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { translateSym, translateName } from '../../util/labo_util';
 
 class PortfolioItem extends React.Component {
     constructor(props) {
@@ -28,14 +29,14 @@ class PortfolioItem extends React.Component {
         let {holding, crypto} = this.props;
         let displayUnits = holding.units.toFixed(4);
         let displayValue = (holding.units * crypto.value).toFixed(2);
-        let displayUnitsFinal = displayUnits + " " + crypto.symbol;
+        let displayUnitsFinal = displayUnits + " " + translateSym[crypto.symbol];
         return (
             <tr className='portfolio-item'>
                 <td>
                     <Link to={`cryptos/${crypto.id}`}>
                         {this.cryptoIcon()}
                         <h4>
-                            {crypto.name}
+                            {translateName[crypto.name]}
                         </h4>
                     </Link>
                 </td>

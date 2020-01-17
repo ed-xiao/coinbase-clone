@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
     .banner {
         // float: left;
         // display: block;
@@ -39,8 +40,10 @@
             // bottom: 0px;
             // top: -20px;
             // width: 481px;
-            height: 241px;
             // margin: auto;
+
+            height: 241px;   // original size of coinbase image
+            margin: 40px 0;
         }
     }
 }

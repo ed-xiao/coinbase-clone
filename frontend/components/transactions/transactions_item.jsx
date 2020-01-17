@@ -1,4 +1,5 @@
 import React from 'react';
+import { translateName, translateSym } from '../../util/labo_util';
 
 class TransactionsItem extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class TransactionsItem extends React.Component {
                 </td>
                 <td>
                     <p>
-                        {crypto.name}
+                        {translateName[crypto.name]}
                     </p>
                 </td>
                 {/* <td>
@@ -26,7 +27,7 @@ class TransactionsItem extends React.Component {
                 </td> */}
                 <td>
                     <p>
-                        {transaction.units.toFixed(4)} {crypto.symbol}
+                        {transaction.units.toFixed(4)} {translateSym[crypto.symbol]}
                     </p>
                 </td>
                 <td>

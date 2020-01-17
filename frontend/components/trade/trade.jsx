@@ -1,4 +1,5 @@
 import React from 'react';
+import { translateSym, translateName } from '../../util/labo_util';
 
 class Trade extends React.Component {
     constructor(props) {
@@ -84,7 +85,7 @@ class Trade extends React.Component {
                                 <img src={imageSource} />
                             </div>
                             <p>
-                                {this.state.name}
+                                {translateName[this.state.name]}
                             </p>
                         </div>
                     </div>

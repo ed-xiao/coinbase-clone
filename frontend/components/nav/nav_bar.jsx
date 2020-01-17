@@ -23,7 +23,7 @@ export default ({ currentUser, logout, openModal }) => {
 
     return (
         <nav className='nav-bar'>
-            <Link to="/" className="nav-link nav-logo">coinbase</Link>
+            <Link to="/" className="nav-link nav-logo">coinlabo</Link>
             {display}
         </nav>
     );

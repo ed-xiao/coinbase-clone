@@ -4,6 +4,7 @@ import {
 } from 'recharts';
 import Loader from 'react-loader-spinner';
 import WatchlistButton from '../watchlist/watchlist_button';
+import { translateName, translateSym } from '../../util/labo_util';
 
 class Crypto extends React.Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class Crypto extends React.Component {
                     // borderColor: "rgb(236, 239, 241)"
                 }}
             >
-                <Loader type="Grid" color="#1552F0" height={100} width={100} />
+                <Loader type="Grid" color="#e4000f" height={100} width={100} />
             </div >
         )
     }
@@ -104,10 +105,10 @@ class Crypto extends React.Component {
                         </div>
                         <div>
                             <h1>
-                                {crypto.name}
+                                {translateName[crypto.name]}
                             </h1>
                             <h2>
-                                {crypto.symbol}
+                                {translateSym[crypto.symbol]}
                             </h2>
                         </div>
                         <div>
@@ -178,8 +179,8 @@ class Crypto extends React.Component {
                         </div>
                     </div>
                     <section>
-                        <h2>About {crypto.name}</h2>
-                        <p>The world’s first cryptocurrency, {crypto.name} is stored and exchanged securely on the internet through a digital ledger known as a blockchain. {crypto.name}s are divisible into smaller units known as satoshis — each satoshi is worth 0.00000001 {crypto.name.toLowerCase()}.</p>
+                        <h2>About {translateName[crypto.name]}</h2>
+                        <p>The world’s first cryptocurrency, {translateName[crypto.name]} is stored and exchanged securely on the internet through a digital ledger known as a blockchain. {translateName[crypto.name]}s are divisible into smaller units known as satoshis — each satoshi is worth 0.00000001 {translateName[crypto.name].toLowerCase()}.</p>
                     </section>
                 </div>
             </div>

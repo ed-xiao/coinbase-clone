@@ -45,16 +45,31 @@ Portfolio.create([
     {user_id: demo_user.id, crypto_id: ethereum.id, units: 42.5},
     {user_id: demo_user.id, crypto_id: ethereum_classic.id, units: 30.5},
     {user_id: demo_user.id, crypto_id: litecoin.id, units: 3},
+    {user_id: demo_user.id, crypto_id: ox.id, units: 84},
+    {user_id: demo_user.id, crypto_id: usd_coin.id, units: 12},
+    {user_id: demo_user.id, crypto_id: bat.id, units: 21},
+    {user_id: demo_user.id, crypto_id: chainlink.id, units: 26},
+    {user_id: demo_user.id, crypto_id: dai.id, units: 43},
+    {user_id: demo_user.id, crypto_id: zcash.id, units: 4.8},
     {user_id: demo_user.id, crypto_id: xrp.id, units: 32},
-    {user_id: demo_user.id, crypto_id: ox.id, units: 20},
-    {user_id: demo_user.id, crypto_id: eos.id, units: 60},
+    {user_id: demo_user.id, crypto_id: augur.id, units: 0.75},
+    {user_id: demo_user.id, crypto_id: stellar.id, units: 85},
+    {user_id: demo_user.id, crypto_id: eos.id, units: 61},
+    {user_id: demo_user.id, crypto_id: tezos.id, units: 72},
+    {user_id: demo_user.id, crypto_id: dash.id, units: 40},
+    {user_id: demo_user.id, crypto_id: orchid.id, units: 123}
 ])
 
 Transaction.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('transactions')
 Transaction.create([
     {user_id: demo_user.id, crypto_id: bitcoin.id, units: 100.5, price: 100000.00, transaction_type: 'buy'},
-    {user_id: demo_user.id, crypto_id: ethereum.id, units: 10, price: 2100.00, transaction_type: 'sell'}
+    {user_id: demo_user.id, crypto_id: ethereum.id, units: 10, price: 2115.92, transaction_type: 'sell'},
+    {user_id: demo_user.id, crypto_id: litecoin.id, units: 100, price: 8221.48, transaction_type: 'buy'},
+    {user_id: demo_user.id, crypto_id: ox.id, units: 5, price: 1341.35, transaction_type: 'sell'},
+    {user_id: demo_user.id, crypto_id: dai.id, units: 52, price: 3817.29, transaction_type: 'buy'},
+    {user_id: demo_user.id, crypto_id: xrp.id, units: 38, price: 584.35, transaction_type: 'sell'},
+    {user_id: demo_user.id, crypto_id: tezos.id, units: 9, price: 1022.48, transaction_type: 'sell'}
 ])
 
 Watchlist.destroy_all

@@ -28,11 +28,12 @@ const Unprotected = ({ component: Component, path, loggedIn, exact }) => (
                     <div className='banner-wrapper'>
                         <div>
                             <h4>Hi there!</h4>
-                            <h1>Welcome to Coinbase.</h1>
-                            <h1>Ready to buy crypto?</h1>
+                            <h1>Welcome to CoinLabo.</h1>
+                            <h1>Ready to buy KartCoins?</h1>
                         </div>
                         <div>
-                            <img src="https://assets.coinbase.com/assets/new-user-header-image.0af1725396d815ccd95c17e676c2da59.png"></img>
+                            {/* <img src="https://assets.coinbase.com/assets/new-user-header-image.0af1725396d815ccd95c17e676c2da59.png"></img> */}
+                            <img src={window.SPLASH}></img>
                         </div>
                     </div>
                 </div>

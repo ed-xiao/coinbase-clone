@@ -80,7 +80,7 @@
             // font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
             font-size: 62px;
             text-align: center;
-            color: rgb(22, 82, 240);
+            color: $darkblue;
             font-weight: 400;
             min-height: 73px;
             max-height: 73px;
@@ -283,7 +283,7 @@
             user-select: none;
             // min-height: 80px;
             height: 80px;
-            color: rgb(22, 82, 240);
+            color: $darkblue;
             // background-color: rgba(17, 51, 83, 0.02);
             cursor: default;
             border-radius: 4px;
