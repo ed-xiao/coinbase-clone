@@ -5,7 +5,7 @@ class CreateWatchlists < ActiveRecord::Migration[5.2]
       t.integer :crypto_id, null: false
       t.timestamps
     end
-    add_index :transactions, [:user_id, :crypto_id], unique: true
+    add_index :watchlists, [:user_id, :crypto_id], unique: true
   end
 end
 

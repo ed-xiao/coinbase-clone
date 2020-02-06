@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_01_15_183759) do
     t.string "transaction_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "crypto_id"], name: "index_transactions_on_user_id_and_crypto_id", unique: true
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
@@ -63,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_183759) do
     t.integer "crypto_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "crypto_id"], name: "index_watchlists_on_user_id_and_crypto_id", unique: true
   end
 
 end
