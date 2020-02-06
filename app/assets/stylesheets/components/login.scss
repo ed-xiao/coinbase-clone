@@ -84,6 +84,10 @@ input {
     border: 1px solid gold;
 }
 
+input:focus {
+    outline-color: $darkblue;
+}
+
 .auth-error {
     // display: flex;
     // flex-direction: column;
