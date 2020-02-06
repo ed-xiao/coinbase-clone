@@ -1,4 +1,9 @@
 .widget-trade {
+    
+    button:focus {
+        outline-color: $darkblue;
+    }
+
     transition: z-index 0ms ease-out 1000ms;
 
     // padding: 20px;
