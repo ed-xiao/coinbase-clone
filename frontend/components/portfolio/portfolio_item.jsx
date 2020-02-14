@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { translateSym, translateName } from '../../util/labo_util';
+import NumberFormat from "react-number-format";
+
 
 class PortfolioItem extends React.Component {
     constructor(props) {
@@ -31,24 +33,33 @@ class PortfolioItem extends React.Component {
         let displayValue = (holding.units * crypto.value).toFixed(2);
         let displayUnitsFinal = displayUnits + " " + translateSym[crypto.symbol];
         return (
-            <tr className='portfolio-item'>
-                <td>
-                    <Link to={`cryptos/${crypto.id}`}>
-                        {this.cryptoIcon()}
-                        <h4>
-                            {translateName[crypto.name]}
-                        </h4>
-                    </Link>
-                </td>
-                <td>
-                    <p>
-                        {displayUnitsFinal}
-                    </p>
-                </td>
-                <td>
-                    ${displayValue}
-                </td>
-            </tr>
+          <tr className="portfolio-item">
+            <td>
+              <Link to={`cryptos/${crypto.id}`}>
+                {this.cryptoIcon()}
+                <h4>{translateName[crypto.name]}</h4>
+              </Link>
+            </td>
+            <td>
+              <p>
+                {/* {displayUnitsFinal} */}
+                <NumberFormat
+                  displayType={"text"}
+                  value={displayUnits}
+                  thousandSeparator={true}
+                />
+                {` ${translateSym[crypto.symbol]}`}
+              </p>
+            </td>
+            <td>
+              <NumberFormat
+                displayType={"text"}
+                value={displayValue}
+                thousandSeparator={true}
+                prefix={'$'}
+              />
+            </td>
+          </tr>
         );
     }
 }

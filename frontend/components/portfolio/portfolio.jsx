@@ -2,6 +2,7 @@ import React from 'react';
 import PortfolioItem from './portfolio_item';
 // import { trackPromise } from 'react-promise-tracker';
 import Loader from 'react-loader-spinner';
+import NumberFormat from "react-number-format";
 
 class Portfolio extends React.Component {
     constructor(props) {
@@ -88,27 +89,30 @@ class Portfolio extends React.Component {
             arrayOfPortfolioItems = this.createTableItems();
         }
         return (
-            <div className='portfolio'>
-                <div className='portfolio-header'>
-                    <div>
-                        <h2>Your Portfolio</h2>
-                    </div>
-                    <div className='portfolio-right'>
-                        {/* <a href='#'>List</a> */}
-                        {/* <a href='#'>Chart</a> */}
-                    </div>
-                </div>
-                <div className='portfolio-body'>
-                    <table>
-                        <tbody>
-                            {arrayOfPortfolioItems}
-                        </tbody>
-                    </table>
-                </div>
-                <div className='portfolio-footer'>
-                    Total Balance ≈ ${this.sumTotalBalance()}
-                </div>
+          <div className="portfolio">
+            <div className="portfolio-header">
+              <div>
+                <h2>Your Portfolio</h2>
+              </div>
+              <div className="portfolio-right">
+                {/* <a href='#'>List</a> */}
+                {/* <a href='#'>Chart</a> */}
+              </div>
             </div>
+            <div className="portfolio-body">
+              <table>
+                <tbody>{arrayOfPortfolioItems}</tbody>
+              </table>
+            </div>
+            <div className="portfolio-footer">
+              Total Balance ≈ $
+              <NumberFormat
+                displayType={"text"}
+                value={this.sumTotalBalance()}
+                thousandSeparator={true}
+              />
+            </div>
+          </div>
         );
     }
 }

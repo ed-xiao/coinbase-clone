@@ -1,5 +1,7 @@
 import React from 'react';
 import { translateName, translateSym } from '../../util/labo_util';
+import NumberFormat from "react-number-format";
+
 
 class TransactionsItem extends React.Component {
     constructor(props) {
@@ -9,39 +11,43 @@ class TransactionsItem extends React.Component {
     render() {
         let { transaction, crypto } = this.props;
         return (
-            <tr>
-                <td>
-                    <p>
-                        {transaction.transactionType.toUpperCase()}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        {translateName[crypto.name]}
-                    </p>
-                </td>
-                {/* <td>
+          <tr>
+            <td>
+              <p>{transaction.transactionType.toUpperCase()}</p>
+            </td>
+            <td>
+              <p>{translateName[crypto.name]}</p>
+            </td>
+            {/* <td>
                     <p>
                         {crypto.symbol}
                     </p>
                 </td> */}
-                <td>
-                    <p>
-                        {transaction.units.toFixed(4)} {translateSym[crypto.symbol]}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        ${transaction.price.toFixed(2)}
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        {transaction.createdAt}
-                    </p>
-                </td>
-            </tr>
-        )
+            <td>
+              <p>
+                <NumberFormat
+                  displayType={"text"}
+                  value={transaction.units.toFixed(4)}
+                  thousandSeparator={true}
+                />{" "}
+                {translateSym[crypto.symbol]}
+              </p>
+            </td>
+            <td>
+              <p>
+                <NumberFormat
+                    displayType={"text"}
+                    value={transaction.price.toFixed(2)}
+                    thousandSeparator={true}
+                    prefix={"$"}
+                />
+              </p>
+            </td>
+            <td>
+              <p>{transaction.createdAt}</p>
+            </td>
+          </tr>
+        );
     }
 }
 

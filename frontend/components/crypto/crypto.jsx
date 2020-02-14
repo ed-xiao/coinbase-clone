@@ -5,6 +5,7 @@ import {
 import Loader from 'react-loader-spinner';
 import WatchlistButton from '../watchlist/watchlist_button';
 import { translateName, translateSym } from '../../util/labo_util';
+import NumberFormat from 'react-number-format';
 
 class Crypto extends React.Component {
     constructor(props) {
@@ -97,70 +98,85 @@ class Crypto extends React.Component {
             crypto['CHANGE24HOUR'] = crypto['CHANGE24HOUR'] * (-1);
         }
         return (
-            <div className='crypto'>
-                <div className='crypto-header-wrapper'>
-                    <div className='crypto-header'>
-                        <div>
-                            <img src={imageSource} />
-                        </div>
-                        <div>
-                            <h1>
-                                {translateName[crypto.name]}
-                            </h1>
-                            <h2>
-                                {translateSym[crypto.symbol]}
-                            </h2>
-                        </div>
-                        <div>
-                            <WatchlistButton cryptoId={crypto.id}/>
-                        </div>
-                    </div>
+          <div className="crypto">
+            <div className="crypto-header-wrapper">
+              <div className="crypto-header">
+                <div>
+                  <img src={imageSource} />
                 </div>
-                <div className='crypto-body'>
-                    <div className="crypto-detail">
-                        <div className='crypto-chart'>
-                            <div className='chart-header'>
-                                <div>
-                                    ${crypto['PRICE']}
-                                </div>
-                                <div>
-                                    <h4 className={changeClass}>
-                                        {changeSign}${crypto['CHANGE24HOUR'].toFixed(2)} ({crypto['CHANGEPCT24HOUR'].toFixed(2)}%)
-                                    </h4>
-                                </div>
-                            </div>
-                            <div className='chart-body'>
-                                {this.lineChart()}
-                            </div>
-                            <div className='chart-axis'>
-                                <span>OCT 15</span>
-                                <span>NOV 2</span>
-                                <span>NOV 20</span>
-                                <span>DEC 8</span>
-                                <span>DEC 26</span>
-                                <span>JAN 14</span>
-                            </div>
-                        </div>
-                        <div className='crypto-info'>
-                            <div>
-                                <h6>
-                                    Market cap
-                                </h6>
-                                <span>{crypto['MKTCAP'].toFixed(2)}</span>
-                            </div>
-                            <div>
-                                <h6>Volume (24 hours)</h6>
-                                <span>{crypto['VOLUME24HOUR'].toFixed(2)}</span>
-                            </div>
-                            <div>
-                                <h6>Circulating supply</h6>
-                                <span>{crypto['SUPPLY'].toFixed(2)} {crypto.symbol}</span>
-                            </div>
-                            <div>
-                                <h6>High (24 Hours)</h6>
-                                <span>{crypto['HIGH24HOUR'].toFixed(2)}</span>
-                            </div>
-                            {/* <div>
+                <div>
+                  <h1>{translateName[crypto.name]}</h1>
+                  <h2>{translateSym[crypto.symbol]}</h2>
+                </div>
+                <div>
+                  <WatchlistButton cryptoId={crypto.id} />
+                </div>
+              </div>
+            </div>
+            <div className="crypto-body">
+              <div className="crypto-detail">
+                <div className="crypto-chart">
+                  <div className="chart-header">
+                    <div>${crypto["PRICE"]}</div>
+                    <div>
+                      <h4 className={changeClass}>
+                        {changeSign}${crypto["CHANGE24HOUR"].toFixed(2)} (
+                        {crypto["CHANGEPCT24HOUR"].toFixed(2)}%)
+                      </h4>
+                    </div>
+                  </div>
+                  <div className="chart-body">{this.lineChart()}</div>
+                  <div className="chart-axis">
+                    <span>OCT 15</span>
+                    <span>NOV 2</span>
+                    <span>NOV 20</span>
+                    <span>DEC 8</span>
+                    <span>DEC 26</span>
+                    <span>JAN 14</span>
+                  </div>
+                </div>
+                <div className="crypto-info">
+                  <div>
+                    <h6>Market cap</h6>
+                    <span>
+                      <NumberFormat
+                        displayType={"text"}
+                        value={crypto["MKTCAP"].toFixed(2)}
+                        thousandSeparator={true}
+                        prefix={"$"}
+                      />
+                    </span>
+                  </div>
+                  <div>
+                    <h6>Volume (24 hours)</h6>
+                    <span>
+                      <NumberFormat
+                        displayType={"text"}
+                        value={crypto["VOLUME24HOUR"].toFixed(2)}
+                        thousandSeparator={true}
+                      />
+                    </span>
+                  </div>
+                  <div>
+                    <h6>Circulating supply</h6>
+                    <span>
+                      <NumberFormat
+                        displayType={"text"}
+                        value={crypto["SUPPLY"].toFixed(2)}
+                        thousandSeparator={true}
+                      />{" "}
+                      {crypto.symbol}
+                    </span>
+                  </div>
+                  <div>
+                    <h6>High (24 Hours)</h6>
+                    <NumberFormat
+                      displayType={"text"}
+                      value={crypto["HIGH24HOUR"].toFixed(2)}
+                      thousandSeparator={true}
+                    />
+                  </div>
+                  {/* <div>
                                 <h6>all time high</h6>
                                 <span>$20,089</span>
                             </div>
@@ -176,14 +192,21 @@ class Crypto extends React.Component {
                                 <h6>popularity on coin base</h6>
                                 <span>#1 most held</span>
                             </div> */}
-                        </div>
-                    </div>
-                    <section>
-                        <h2>About {translateName[crypto.name]}</h2>
-                        <p>The world’s first cryptocurrency, {translateName[crypto.name]} is stored and exchanged securely on the internet through a digital ledger known as a blockchain. {translateName[crypto.name]}s are divisible into smaller units known as satoshis — each satoshi is worth 0.00000001 {translateName[crypto.name].toLowerCase()}.</p>
-                    </section>
                 </div>
+              </div>
+              <section>
+                <h2>About {translateName[crypto.name]}</h2>
+                <p>
+                  The world’s first cryptocurrency, {translateName[crypto.name]}{" "}
+                  is stored and exchanged securely on the internet through a
+                  digital ledger known as a blockchain.{" "}
+                  {translateName[crypto.name]}s are divisible into smaller units
+                  known as satoshis — each satoshi is worth 0.00000001{" "}
+                  {translateName[crypto.name].toLowerCase()}.
+                </p>
+              </section>
             </div>
+          </div>
         );
     }
 }
