@@ -97,7 +97,12 @@ class Trade extends React.Component {
                 className="trade-crypto-selector"
                 onClick={this.openSelectModal}
               >
-                <p>Buy</p>
+                <p>
+                  {transaction_type
+                    .slice(0, 1)
+                    .toUpperCase()
+                    .concat(transaction_type.slice(1))}
+                </p>
                 <div>
                   <div>
                     <img src={imageSource} />
