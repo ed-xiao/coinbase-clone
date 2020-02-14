@@ -9,7 +9,7 @@ class Footer extends React.Component {
         <footer>
             <a href="https://github.com/ed-xiao"><i className="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/edward-xiao/"><i className="fab fa-linkedin"></i></a>
-                <a href="https://angel.co/edward-xiao-5"><i class="fab fa-angellist"></i></a>
+            <a href="https://angel.co/edward-xiao-5"><i className="fab fa-angellist"></i></a>
         </footer>
         )
     }

@@ -1,11 +1,25 @@
 import React from 'react';
 // import { translateSym, translateName } from '../../util/labo_util';
+import {
+  disableBodyScroll,
+  clearAllBodyScrollLocks
+} from "body-scroll-lock";
+
 
 
 class SelectCrypto extends React.Component {
     constructor(props) {
         super(props);
         this.updateParentState = this.updateParentState.bind(this);
+    }
+
+    componentDidMount() {
+        let targetElement = document.querySelector(".widget-select");
+        disableBodyScroll(targetElement);
+    }
+
+    componentWillUnmount() {
+        clearAllBodyScrollLocks();
     }
 
     updateParentState() {

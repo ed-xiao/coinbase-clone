@@ -1,5 +1,10 @@
 import React from 'react';
 import { translateSym, translateName } from '../../util/labo_util';
+import {
+  disableBodyScroll,
+  clearAllBodyScrollLocks
+} from "body-scroll-lock";
+
 
 class Trade extends React.Component {
     constructor(props) {
@@ -25,6 +30,12 @@ class Trade extends React.Component {
 
     componentDidMount() {
         this.props.fetchCryptos(); //jbuilder filters out USD, but portfolio fetch may already have added USD to redux state
+        let targetElement = document.querySelector(".widget-trade");
+        disableBodyScroll(targetElement);
+    }
+
+    componentWillUnmount() {
+        clearAllBodyScrollLocks();
     }
 
     update(field) {
