@@ -17,6 +17,22 @@ body {
         .top {
             // width: 100%;
             // max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+
+            header {
+                flex-shrink: 0;
+            }
+
+            footer {
+                height: 120px;
+                flex-shrink: 0;
+            }
+
+            .login-splash, .welcome, .body-wrapper, .crypto, .prices {
+                flex: 1 0 auto;
+            }
 
             .widgets {
                 display: flex;

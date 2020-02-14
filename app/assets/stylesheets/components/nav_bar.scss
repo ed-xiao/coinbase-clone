@@ -1,12 +1,7 @@
-.top {
+header {
     display: flex;
-    flex-direction: column;
-
-    header {
-        display: flex;
-        justify-content: center;
-        background: $blue;
-    }
+    justify-content: center;
+    background: $blue;
 }
 
 .nav-bar {
