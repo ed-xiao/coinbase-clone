@@ -48,7 +48,7 @@ class WatchlistItem extends React.Component {
                 </td> */}
             <td>
               <button
-                onClick={() => this.props.deleteWatches(this.props.watchId)}
+                onClick={() => this.props.deleteWatch(this.props.watchId)}
               >
                 <i className="fas fa-star"></i>
               </button>

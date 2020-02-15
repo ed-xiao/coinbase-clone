@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 //do I need createWatch???
 const mapDispatchToProps = (dispatch) => ({
     fetchWatches: () => dispatch(fetchWatches()),
-    deleteWatches: (id) => dispatch(deleteWatch(id)),
+    deleteWatch: (id) => dispatch(deleteWatch(id)),
     fetchCryptos: () => dispatch(fetchCryptos())
 })
 

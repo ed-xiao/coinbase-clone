@@ -45,7 +45,7 @@ class Watchlist extends React.Component {
                     crypto={crypto}
                     key={idx}
                     order={idx}
-                    deleteWatches={this.props.deleteWatches}
+                    deleteWatch={this.props.deleteWatch}
                     watchId={watch.id}
                 />
             )
@@ -62,7 +62,7 @@ class Watchlist extends React.Component {
             <div className="watchlist">
                 <div className="watchlist-header">
                     <h2>
-                        Following
+                        Watchlist
                     </h2>    
                 </div>
                 <div className="watchlist-body">
@@ -108,7 +108,7 @@ class Watchlist extends React.Component {
                                 </td>
                                 <td>
                                     <p>
-                                        Follow
+                                        Watch
                                     </p>
                                 </td>
                             </tr>

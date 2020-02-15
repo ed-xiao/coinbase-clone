@@ -20,7 +20,7 @@ class WatchlistButton extends React.Component {
                 return (
                     <button className='following' onClick={() => this.props.deleteWatch(watches[i].id)}>
                         <i className="fas fa-star"></i>
-                        <h2>Following</h2>
+                        <h2>Watching</h2>
                     </button>
                 )
             }
@@ -28,7 +28,7 @@ class WatchlistButton extends React.Component {
         return (
             <button className='not-following' onClick={() => this.props.createWatch({crypto_id: cryptoId})}>
                 <i className="far fa-star"></i>
-                <h2>Follow</h2>
+                <h2>Watch</h2>
             </button>
         );
     }
