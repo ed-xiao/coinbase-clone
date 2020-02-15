@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import NumberFormat from "react-number-format";
 import Loader from "react-loader-spinner";
+import { translateSym, translateName } from "../../util/labo_util";
 
 export default function table({cryptos, fetchCryptos}) {
 
@@ -44,8 +45,8 @@ export default function table({cryptos, fetchCryptos}) {
               <tr>
                 <td>
                   <img src={window[crypto.symbol]} />
-                  <span>{crypto.name}</span>
-                  <span>{crypto.symbol}</span>
+                  <span>{translateName[crypto.name]}</span>
+                  <span>{translateSym[crypto.symbol]}</span>
                 </td>
                 <td>
                   <p>
