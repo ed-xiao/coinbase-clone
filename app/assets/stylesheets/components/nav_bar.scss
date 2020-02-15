@@ -88,6 +88,7 @@ header {
 
 .nav-link:hover {
     cursor: pointer;
+    color: lightgrey;
 }
 
 .nav-link:focus {
@@ -99,6 +100,10 @@ header {
     font-size: 24px;
     font-weight: 700;
     padding: 0px;
+
+    &:hover {
+        color: white;
+    }
 }
 
 .nav-trade {
@@ -123,4 +128,5 @@ header {
 
 .nav-trade:hover {
     background-color: lightgrey;
+    color: $blue;
 }

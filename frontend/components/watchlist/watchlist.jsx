@@ -16,13 +16,17 @@ class Watchlist extends React.Component {
         return (
             <div
                 style={{
-                    minWidth: "81%",
+                    // maxWidth: "1158px",
+                    // minWidth: "100vh",
+                    width: "1158px",
                     minHeight: "500px",
                     maxHeight: "500px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    margin: "40px",
+                    // margin: "40px",
+                    // marginTop: "80px",
+                    margin: "80px 40px",
                     boxShadow: "rgba(17, 51, 83, 0.02) 0px 4px 12px 0px",
                     backgroundColor: "rgb(255, 255, 255)",
                     borderRadius: "4px",
