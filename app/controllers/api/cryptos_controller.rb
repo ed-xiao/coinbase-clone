@@ -12,11 +12,16 @@ class Api::CryptosController < ApplicationController
     end
 
     def show
-        @crypto = Crypto.find(params[:id])
+        if params[:id] == 'all'
+            @cryptos = Crypto.all
+            symbols = @cryptos.map {|crypto| crypto.symbol}
+        else
+            @cryptos = Crypto.find([params[:id]])
+            symbols = @cryptos[0]['symbol']
+        end
         # @value = Crypto.fetch_current_value([@crypto['symbol']])
         # debugger
-
-        @value = Crypto.fetch_crypto_detail(@crypto['symbol'])
+        @value = Crypto.fetch_crypto_detail([symbols])
     end
 end
 

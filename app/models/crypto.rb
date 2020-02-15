@@ -7,6 +7,7 @@ class Crypto < ApplicationRecord
 
     def self.fetch_current_value(symbols)
         url = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms='
+        # url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='
         syms = symbols.join(',').concat('&tsyms=USD&api_key=')
         api_key = Rails.application.credentials.cryptocompare[:api_key]
         response = Faraday.get url+syms+api_key
@@ -15,9 +16,11 @@ class Crypto < ApplicationRecord
         # https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,DASH&tsyms=BTC,USD,EUR&api_key=INSERT-YOUR-API-KEY-HERE
     end
 
-    def self.fetch_crypto_detail(symbol)
+    def self.fetch_crypto_detail(symbols)
         # url = "https://min-api.cryptocompare.com/data/generateAvg?fsym=#{symbol}&tsym=USD&e=Kraken"
-        url = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=#{symbol}&tsyms=USD"
+        syms = symbols.join(',')
+        url = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=#{syms}&tsyms=USD"
+
         response = Faraday.get url
         values = JSON.parse(response.body)
     end
