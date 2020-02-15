@@ -154,6 +154,9 @@
                                 color: rgb(223, 95, 103);
                             }
                         }
+                        &:last-of-type {
+                            border-bottom: 0;
+                        }
                     }
                     img {
                         width: 36px;

@@ -10,24 +10,26 @@ export default function table({cryptos, fetchCryptos}) {
 
     const loading = () => {
         return (
-          <div
-            style={{
-              width: "784px",
-              minHeight: "700px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              alignSelf: "center",
-              margin: "40px",
-              boxShadow: "rgba(17, 51, 83, 0.02) 0px 4px 12px 0px",
-              backgroundColor: "rgb(255, 255, 255)"
-              // borderRadius: "4px",
-              // borderWidth: "1px",
-              // borderStyle: "solid",
-              // borderColor: "rgb(236, 239, 241)"
-            }}
-          >
-            <Loader type="Grid" color="#e4000f" height={100} width={100} />
+          <div className="splash-table-container">
+            <div
+              style={{
+                width: "1000px",
+                minHeight: "312px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                alignSelf: "center",
+                borderRadius: "4px",
+                borderWidth: "1px",
+                borderStyle: "solid",
+                borderColor: "#eceff1",
+                backgroundColor: "rgb(255, 255, 255)"
+                // margin: "40px",
+                //   boxShadow: "rgba(17, 51, 83, 0.02) 0px 4px 12px 0px",
+              }}
+            >
+              <Loader type="Grid" color="#e4000f" height={100} width={100} />
+            </div>
           </div>
         );
     }
