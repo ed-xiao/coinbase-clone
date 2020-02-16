@@ -15,6 +15,7 @@ import Welcome from '../components/welcome/welcome';
 import Footer from '../components/footer/footer';
 import CryptoContainer from '../components/crypto/crypto_container';
 import Modal from '../components/modal/modal';
+import Prices from '../components/prices/prices_container';
 
 // update line 21 to be new portfolio container
 const App = () => (
@@ -29,6 +30,7 @@ const App = () => (
             <AuthRoute exact path='/signup' component={SignupFormContainer} />
             <AuthRoute exact path='/login' component={LoginFormContainer} />
             <ProtectedRoute exact path='/cryptos/:cryptoId' component={CryptoContainer} />
+            <ProtectedRoute exact path="/price" component={Prices}/>
             <UnprotectedRoute exact path="/" component={Welcome} />   //not logged in
             {/* <ProtectedRoute exact path="/home" component={PortContainer} />   // logged in */}
             <Redirect to="/" />
