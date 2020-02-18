@@ -53,3 +53,9 @@ export const fetchHomeData = () => dispatch => {
         .then(allHomeData => dispatch(receiveHome(allHomeData)))
 };
 ```
+
+## Future Features
+
+* Search feature for cryptocurrencies
+* Pie chart displaying allocation of portfolio holdings
+* Live update of prices without page refresh
