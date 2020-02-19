@@ -14,6 +14,7 @@ export default function prices({cryptos, fetchCryptos, fetchWatches, createWatch
                     crypto={crypto}
                     key={idx}
                     order={idx}
+                    createWatch={createWatch}
                     deleteWatch={deleteWatch}
                     // watchId={watch.id}
                 />

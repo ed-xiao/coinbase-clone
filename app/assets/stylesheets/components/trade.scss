@@ -106,6 +106,16 @@
             margin-top: 60px; //actual coinbase doesn't have a margin
         }
 
+        .trade-errors {
+            p {
+                color: rgba(17, 51, 83, 0.6);
+                font-size: 14px;
+                line-height: 1.6;
+                font-weight: 400;
+                align-self: center;
+            }
+        }
+
         .trade-crypto-selector {
             display: flex;
             cursor: pointer;
@@ -185,11 +195,19 @@
         }
     }
         
-        // .trade-bottom {
+    .trade-bottom {
         // margin-top: 24px;
         // display: flex;
         // flex-direction: column; 
-    // }
+        p {
+            color: rgba(17, 51, 83, 0.6);
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: 400;
+            margin-right: 24px;
+            float: right;
+        }
+    }
 }
 
 .widget-select {
@@ -198,7 +216,8 @@
     // -webkit-box-pack: start;
     // justify-content: flex-start;
     overflow-y: scroll;
-    max-height: 494px;
+    // changed this to match first part of trade modal
+    max-height: 524px;
     // flex: 1 1 0%;
 
     transition: z-index 0ms ease-out 1000ms;
@@ -214,7 +233,8 @@
     justify-content: space-between;
     min-width: 370px;
     max-width: 370px;
-    min-height: 496px;
+    // changed this to match first part of trade modal
+    min-height: 524px;
     box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
     background-color: white;
     border-radius: 4px;
