@@ -121,7 +121,7 @@ class Watchlist extends React.Component {
                     </table>
                 </div>
                 <div className="watchlist-footer">
-                    <span>Discover more assets ></span>
+                    {/* <span>Discover more assets ></span> */}
                 </div>
             </div>
         )

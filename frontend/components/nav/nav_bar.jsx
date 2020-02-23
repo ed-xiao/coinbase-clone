@@ -6,8 +6,8 @@ export default ({ currentUser, logout, openModal }) => {
         <div className="nav-wrapper">
             <div className='nav-center'>
                 <Link className="nav-link" to="/">Home</Link>
-                <Link className="nav-link" to="/">Portfolio</Link>
-                <Link className="nav-link" to="/price">Prices</Link>
+                {/* <Link className="nav-link" to="/">Portfolio</Link> */}
+                {/* <Link className="nav-link" to="/price">Prices</Link> */}
             </div>
             <div className="nav-right">
                 <button className="nav-link nav-trade" onClick={openModal}>Trade</button>
