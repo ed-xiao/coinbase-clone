@@ -4,7 +4,7 @@ import {
 } from 'recharts';
 import Loader from 'react-loader-spinner';
 import WatchlistButton from '../watchlist/watchlist_button';
-import { translateName, translateSym } from '../../util/labo_util';
+import { translateName, translateSym, addCommas } from '../../util/labo_util';
 import NumberFormat from 'react-number-format';
 
 class Crypto extends React.Component {
@@ -15,6 +15,7 @@ class Crypto extends React.Component {
     componentDidMount() {
         this.props.fetchCryptoHist(this.props.match.params.cryptoId);
         this.props.fetchCrypto(this.props.match.params.cryptoId);
+        this.props.fetchPortfolio();
     }
 
     loading() {
@@ -117,7 +118,8 @@ class Crypto extends React.Component {
               <div className="crypto-detail">
                 <div className="crypto-chart">
                   <div className="chart-header">
-                    <div>${crypto["PRICE"]}</div>
+                    {/* <div>${crypto["PRICE"]}</div> */}
+                    <div>${addCommas(crypto["PRICE"])}</div>
                     <div>
                       <h4 className={changeClass}>
                         {changeSign}${crypto["CHANGE24HOUR"].toFixed(2)} (
@@ -174,6 +176,7 @@ class Crypto extends React.Component {
                       displayType={"text"}
                       value={crypto["HIGH24HOUR"].toFixed(2)}
                       thousandSeparator={true}
+                      prefix={"$"}
                     />
                   </div>
                   {/* <div>

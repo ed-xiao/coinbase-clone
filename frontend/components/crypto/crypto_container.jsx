@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Crypto from './crypto';
 import { fetchCryptoHist } from '../../actions/crypto_actions';
 import { fetchCrypto } from '../../actions/crypto_actions';
+import { fetchPortfolio } from "../../actions/portfolio_actions";
 
 // const mapStateToProps = ({portfolio}) => ({
 //     portfolio: portfolio
@@ -24,9 +25,10 @@ const mapStateToProps = (state, ownProps) => {
     })
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    fetchCryptoHist: (symbol) => dispatch(fetchCryptoHist(symbol)),
-    fetchCrypto: (id) => dispatch(fetchCrypto(id))
+const mapDispatchToProps = dispatch => ({
+  fetchCryptoHist: symbol => dispatch(fetchCryptoHist(symbol)),
+  fetchCrypto: id => dispatch(fetchCrypto(id)),
+  fetchPortfolio: () => dispatch(fetchPortfolio())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Crypto);
